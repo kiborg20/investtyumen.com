@@ -1,0 +1,65 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/pagination.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+@import url("/local/templates/investtumen/css/button.css");
+
+.project-filters__panel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.project-filters__panel .button-group {
+    margin-right: var(--padding-xxl);
+}
+
+.project-filters__panel .button-group::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.project-filters__panel .form-field__select {
+    display: none;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: var(--padding-xxl);
+    max-width: 368px;
+
+    & input {
+        border-color: var(--color-black-40);
+    }
+}
+
+.project-filters__panel .form-field__select::before {
+    top: 17px;
+}
+
+.project-filters__panel .form-field__select.show {
+    display: block;
+}
+
+.project-cases.cases .cases__image .badge_theme-light {
+    max-width: 280px;
+}
+
+@media (max-width: 1023px){
+    .project-cases.cases {
+        flex-wrap: wrap;
+    }   
+
+    .project-filters__panel .button-group {
+        margin-right: 0;
+        margin-bottom: var(--padding-xl);
+    }
+
+    .project-filters__panel .form-field__select {
+        margin-bottom: var(--padding-xl);
+    }
+}
+
+@media (max-width: 767px){
+    .project-cases.cases .cases__item{
+        width: 100%;
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+}

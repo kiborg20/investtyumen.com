@@ -1,0 +1,14 @@
+<section >
+    <div class="full-slider" data-full-slider data-slider-view="1.5">
+            <div class="swiper-wrapper">
+                    {% for image in arResult['HEADER']['images'] %}
+                            <div class="swiper-slide full-slider__item">
+                                <div class="card-advantage" style="background-image: url({{get_src_by_id(image['PROPERTY_VALUE'])}});"></div>
+                            </div>
+                    {% endfor %}
+            </div>
+
+            <div class="full-slider__nav full-slider__nav_prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" d="M14.005 8.062 10.065 12l3.94 3.94a.75.75 0 0 1-1.06 1.06l-4.47-4.47a.75.75 0 0 1 0-1.06L12.945 7a.75.75 0 0 1 1.06 1.06Z"/></svg></div>
+            <div class="full-slider__nav full-slider__nav_next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" d="m10.01 15.94 3.939-3.939-3.94-3.94a.75.75 0 0 1 1.061-1.06l4.47 4.47a.75.75 0 0 1 0 1.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06Z"/></svg></div>
+    </div>
+</section>

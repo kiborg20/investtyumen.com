@@ -1,0 +1,48 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+
+.map-container {
+    width: 100%;
+    height: 688px;
+    border-radius: 12px;
+    background-color: var(--background-white);
+    background-image: url(/statics/spinner.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 64px;
+    padding: var(--padding-xs);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#loadingMessage {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: #ccc;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+@media (max-width: 767px) {
+    .map-container {
+        height: 986px;
+    }
+}
+
+@media (max-width: 374px) {
+    .map-wrapper.wrapper_mode-l {
+        padding: 0;
+    }
+
+    .map-container {
+        height: 670px;
+        padding: var(--padding-ml) 0;
+        border-radius: 0;
+    }
+}

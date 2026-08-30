@@ -1,0 +1,23 @@
+{% for item in arResult['ITEMS'] %}
+<section id="goals" class="section section_padding-xl">
+   <div class="wrapper wrapper_mode-l">
+      <div class="card card_theme-transparent">
+         <div class="card__item card__item_between card__item_border">
+            <div class="headline headline_size-h2">{{item['INFRASTRUCTURE_TITLE']}}</div>
+            <div class="card card_theme-transparent">
+               <div class="card__item card__item_column">
+                  <div class="description description_padding-none description_line-20">
+                    {{item['INFRASTRUCTURE_TEXT']['TEXT']|raw}}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card__item card__item_padding-none">
+            <div class="image-container image-container_bg part-image"
+                style="background-image: url({{item['INFRASTRUCTURE_IMAGE']}})">
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+{% endfor %}

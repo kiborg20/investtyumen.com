@@ -1,0 +1,9 @@
+.form_fieldset input[type=text]{
+    width: calc(100% - 50px);
+    height: 45px;
+    line-height: 45px;
+    border-radius: 10px;
+    padding: 0 25px;
+    border: 1px solid #9C9C9C;
+    margin-bottom: 30px;
+}

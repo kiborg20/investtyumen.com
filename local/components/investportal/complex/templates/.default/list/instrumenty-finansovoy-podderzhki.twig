@@ -1,0 +1,69 @@
+{{ include_component("investportal:main.intro", "sucess-stories", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+
+<section class="section section_padding-xxl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card__wrapper card__wrapper-auto card_theme-transparent">
+            <div class="card__item card__item_between card__item-theme-image">
+                <div>
+                    <div class="headline headline_size-h3">
+                        Государственная поддержка  инвестиционных проектов
+                    </div>
+
+                    <div class="label">
+                        Осуществляется в рамках соглашений о защите и поощрении капиталовложений (СЗПК).
+                        СЗПК заключается с организацией, реализующей новый инвестиционный проект в одной из сфер российской экономики (за исключением оптовой и розничной торговли, игорного бизнеса, производства табачных изделий, алкогольной продукции). Минимальный порог инвестиций для заключения СЗПК - 200 миллионов рублей.
+                    </div>
+                </div>
+                <button style="width:fit-content" class="button button_size-m button_theme-white" type="button">
+                    Смотреть документы
+                </button>
+            </div>
+            <div class="card__item card__item_border card__item_column card_theme-white card__item_noborder">
+                <div class="label description_padding-bottom-none">Меры государственной поддержки:</div>
+
+                <div class="list-content">
+                    <div class="list-content__item">
+                        Стабилизационная оговорка, которая гарантирует неприменение в отношении инвестора актов (решений), ухудшающих условия реализации проекта.
+                    </div>
+                    <div class="list-content__item">
+                        Возмещение инвестору в пределах обязательных платежей, уплаченных в бюджет, затрат:
+                        <br/>
+                        на создание объектов инфраструктуры, необходимых для реализации инвестиционного проекта;
+                        <br/>
+                        на уплату процентов по кредитам и займам, купонного дохода по облигационным займам, привлеченным для создания объектов инфраструктуры, необходимых для реализации инвестиционного проекта;
+                        <br/>
+                        на уплату процентов по кредитам и займам, купонного дохода по облигационным займам, привлеченным для создания объектов недвижимого имущества, результатов интеллектуальной деятельности.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ include_component("investportal:main.block", "listfinpodd", {
+    'IBLOCK': 'loans',
+    'IBLOCK_TYPE': 'pforinvestor',
+    'FILTER': true
+}) }}
+
+<section class="section section_padding-m">
+    <div class="wrapper wrapper_mode-l">
+        <h1 class="headline headline_size-h1">Законодательство</h1>
+    </div>
+</section>
+
+{{ include_component("investportal:main.block", "files", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'files',
+    'IBLOCK_TYPE': 'content'
+}) }}
+
+{{ include_component("investportal:main.block", "ask", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'ask',
+    'IBLOCK_TYPE': 'content'
+}) }}

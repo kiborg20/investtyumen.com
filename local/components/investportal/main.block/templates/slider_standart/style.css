@@ -1,0 +1,26 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+
+.image-container_bg.full-image {
+  aspect-ratio: 666 / 582;
+}
+
+.card-advantage {
+  display: flex;
+  height: 480px;
+  padding: 20px;
+  flex-wrap: nowrap;
+  border-radius: var(--border-large);
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.card-mission .label {
+  margin-bottom: 60px;
+}

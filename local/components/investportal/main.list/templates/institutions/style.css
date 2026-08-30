@@ -1,0 +1,122 @@
+.image-container_bg.full-image {
+  height: 500px;
+}
+
+.logotype-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logotype-list__item {
+  position: relative;
+  display: flex;
+  width: calc(100% / 4);
+  min-height: 112px;
+  margin: 32px 0;
+  padding: 0 56px;
+  border-left: 1px solid var(--color-black-40);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logotype-list__item::before {
+  position: absolute;
+  right: -1px;
+  bottom: -32px;
+  left: 0;
+  display: block;
+  height: 1px;
+  content: "";
+  background: var(--color-black-40);
+}
+
+@media (min-width: 1024px) {
+  .logotype-list__item:nth-child(-n + 4) {
+    margin-top: 0;
+  }
+
+  .logotype-list__item:nth-child(4n + 1) {
+    border-left: none;
+  }
+}
+
+.logotype-list__image {
+  margin-bottom: var(--padding-xxl);
+}
+
+.logotype-list__image img {
+  display: block;
+  max-width: 100%;
+}
+
+.table {
+  display: flex;
+  margin: 0 calc(-1 * var(--padding-ml));
+  flex-wrap: wrap;
+}
+
+.description_size-p1 + .table,
+.block__limited-width-m + .table {
+  margin-top: 60px;
+}
+
+.table__item {
+  display: flex;
+  width: calc(50% - var(--padding-ml) * 2);
+  margin: 0 var(--padding-ml);
+  padding: var(--padding-xl) 0;
+  flex-shrink: 1;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-black-40);
+}
+
+@media (max-width: 1023px) {
+  .image-container_bg.full-image {
+    height: 266px;
+  }
+
+  .table__item {
+    width: 100%;
+  }
+
+  .logotype-list__item {
+    display: flex;
+    width: calc(100% / 3);
+    padding: 0 32px;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .logotype-list__item:first-child,
+  .logotype-list__item:nth-child(3n + 4) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .logotype-list__item:nth-child(3n + 3) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .logotype-list__item {
+    width: 50%;
+    height: 136px;
+    margin: 24px 0;
+    padding: 0 24px;
+  }
+
+  .logotype-list__item:first-child,
+  .logotype-list__item:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .logotype-list__item:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .logotype-list__item:nth-child(even) {
+    padding-right: 0;
+  }
+}

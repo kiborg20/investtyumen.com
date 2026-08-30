@@ -1,0 +1,44 @@
+.list-content {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.headline + .list-content {
+  margin-top: 24px;
+}
+
+.label + .list-content {
+  margin-top: 4px;
+}
+
+.list-content__item {
+  position: relative;
+  display: flex;
+  margin-bottom: var(--padding-ml);
+  padding-left: 18px;
+  font-size: calc(var(--font-size-p1)*1px);
+  line-height: 24px;
+  align-items: center;
+}
+
+.list-content__item a[download] {
+  display: inline-flex;
+  padding: 4px 6px;
+}
+
+.list-content__item:last-child {
+  margin-bottom: 0;
+}
+
+.list-content__item::before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 6px;
+  height: 6px;
+  content: "";
+  border-radius: 50%;
+  background: var(--color-blue);
+}

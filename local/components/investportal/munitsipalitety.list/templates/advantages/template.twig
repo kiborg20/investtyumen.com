@@ -1,0 +1,25 @@
+<section class="section section_padding-s">
+    <div class="wrapper wrapper_mode-l">
+        <div class="full-slider full-slider_auto" data-full-slider data-slider-view="3">
+            <div class="swiper-wrapper">
+                {% for item in arResult['ITEMS'] %}
+                <div class="swiper-slide full-slider__item">
+                    <div class="advantages-card">
+                        <div class="advantages-card__image"><img alt="" src="{{ item.PREVIEW_PICTURE }}" /></div>
+
+                        <div class="advantages-card__badge">
+                            <div class="badge badge_theme-light">{{ item.TAGS }}</div>
+                        </div>
+
+                        <div class="advantages-card__content">
+                            <div class="headline headline_size-h5">{{ item.NAME }}</div>
+
+                            <div class="description description_size-p2 description_padding-s description_padding-bottom-none"><p>{{ item.PREVIEW_TEXT | raw }}</p></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,57 @@
+.profile-list-information {
+
+}
+.profile-list-information h1 {
+	font-family: 'TT Hoves';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 46px;
+	margin-bottom: 60px;
+}
+.profile-list-information h2 {
+	font-family: 'Roboto';
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 25px;
+	margin-bottom: 50px;
+}
+.profile-list-information .tabpadfaq {
+
+}
+.profile-list-information .faqitem {
+
+}
+.profile-list-information .faqitemtitle {
+
+}
+.profile-list-information .faqitemcontent {
+	font-family: 'Roboto';
+}
+.profile-list-information .faqitemcontent span {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 160%;
+	margin-bottom: 15px;
+	display: block;
+}
+.profile-list-information .faqitemcontent h3 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 160%;
+	margin-bottom: 15px;
+
+}
+.profile-list-information .faqitemcontent h4 {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 25px;
+	margin-bottom: 30px;
+}
+.profile-list-information .faqitemcontent p {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 160%;
+}

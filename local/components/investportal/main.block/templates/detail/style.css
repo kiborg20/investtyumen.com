@@ -1,0 +1,75 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+@import url("/local/templates/investtumen/css/link-card.css");
+
+.support-cards.card {
+    flex-wrap: wrap;
+}
+
+.support-cards.card .card__item {
+    margin-bottom: 24px;
+    min-height: 320px;
+    max-height: 320px;
+    background-color: var(--color-white);
+    border: none;
+}
+
+.support-card__tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.support-card__tag {
+    color: var(--color-basic);
+    background-color: var(--color-blue-light-2);
+    margin-right: var(--padding-small);
+    font-size: calc(var(--font-size-p2)*1px);
+    font-weight: 500;
+    line-height: 20px;
+    padding: 6px var(--padding-ml);
+    border-radius: var(--border-medium);
+}
+
+.support-card__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: end;
+}
+
+.support-card__buttons a {
+    margin-right: var(--padding-small);
+}
+
+@media (max-width: 767px) {  
+    .support-cards.card .card__item {
+      margin-bottom: 24px;
+    }
+  
+    .support-cards.card .card__item:first-child {
+      margin-bottom: 24px;
+    }
+  
+    .card__item {
+      width: 100%;
+    }
+  }
+
+.support-page__button {
+    margin-top: 40px;
+}
+
+@media (max-width: 1023px) {
+    .support-page__button {
+        margin-top: 32px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .support-page__button {
+        width: 100%;
+    }
+}

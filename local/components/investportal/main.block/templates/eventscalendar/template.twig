@@ -1,0 +1,30 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <h2 class="headline headline_size-h2">Календарь мероприятий</h2>
+
+        <div class="grid events-grid">
+            {% for item in arResult['ITEMS'] %}
+            <div class="grid__row">
+                <div class="grid__cell description strong description_padding-none description_size-p2">
+                    {{ item['PREVIEW_TEXT'] }}
+                </div>
+                <div class="grid__cell document-name__cell description description_padding-none description_size-p2">
+                    {{item['NAME']}}
+                </div>
+                <div class="grid__cell">
+
+                    <a href="{{ item['DETAIL_TEXT'] }}" class="button button_theme-transparent button_size-m no-border">
+                        Перейти на сайт мероприятия
+                        <div class="button__icon button__icon_right">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.14286 3H13M13 3V10.8571M13 3L3 13" stroke="#4A66F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

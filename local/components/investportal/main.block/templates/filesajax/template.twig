@@ -1,0 +1,27 @@
+{% for item in arResult['ITEMS'] %}
+    <section class="section section_padding-xl section_padding-top-none">
+        <div class="wrapper wrapper_mode-l">
+            <div class="headline headline_size-h3">{{ item['NAME'] }}</div>
+            {% if item['PREVIEW_TEXT'] %}
+                <div class="description description_size-p1">{{ item['PREVIEW_TEXT'] }}</div>
+            {% endif %}
+
+            <div {{ item['files']|length > 6 ? 'data-list' : '' }} class="link-cards">
+                {% for file in item['files'] %}
+                    <div class="link-cards__item {{ loop.index > 6 ? 'link-cards__item_hidden' : '' }}">
+                        <a class="link-cards__link link-cards__link-column" href="{{ get_src_by_id(file['PROPERTY_VALUE']) }}">
+                            <div class="link-cards__content">
+                                <div class="description description_size-p1 description_padding-none">{{ file['PROPERTY_DESCRIPTION'] }}</div>
+                                <div class="icon-block icon-block_theme-white icon-block_size-m"></div>
+                            </div>    
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if item['files']|length > 6 %}
+                <a data-list-handler class="button button_size-m button_theme-transparent button_full-width" href="#">Показать ещё ...</a>
+            {% endif %}
+        </div>
+    </section>
+{% endfor %}

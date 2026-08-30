@@ -1,0 +1,37 @@
+@import url("/local/templates/investtumen/components/bitrix/news/itnews/bitrix/news.list/.default/style.css");
+
+.date-icon {
+	display: flex;
+	margin-top: var(--padding-xxl);
+	justify-content: flex-start;
+	font-size: calc(var(--font-size-p1)*1px);
+	line-height: 24px;
+	color: var(--color-black-60);
+}
+
+.date-icon span {
+	display: inline-flex;
+	margin-right: var(--padding-small);
+}
+
+.image-content {
+	border-radius: var(--border-large);
+	overflow: hidden;
+}
+
+.image-content img {
+	display: block;
+}
+
+@media (max-width: 1023px) {
+	.image-content {
+		width: 100%;
+		height: 320px;
+	}
+
+	.image-content img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

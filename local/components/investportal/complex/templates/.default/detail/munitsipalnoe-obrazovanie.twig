@@ -1,0 +1,181 @@
+{# <pre>
+{{dump(arParams)}}
+</pre> #}
+{# detail #}
+{# <pre>
+{{dump(arResult)}}
+</pre> #}
+{# <pre>
+{{dump(arResult['ITEM']['DETAIL_TEXT'])}}
+</pre> #}
+
+{{ include_component("investportal:main.block", "detailnews", {
+    'IS_EMPTY': true
+}) }}
+
+<div class="munitsipalnoe-obrazovanie">
+
+
+<section class="section">
+    <div class="wrapper wrapper_mode-l">
+        <div class="breadscrumbs">
+            <div class="breadscrumbs__button">
+                <a onclick="history.back()" href="#">
+                    <span class="button button_theme-transparent button_size-s button_padding-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="M13.651 7.707a.25.25 0 1 0-.354-.354l-4.469 4.47a.25.25 0 0 0 0 .354l4.823-4.47Zm0 0-3.939 3.94-.354.353m4.293-4.293L9.358 12m0 0 .354.354M9.358 12l.354.354m0 0 3.94 3.939m-3.94-3.94 3.94 3.94m0 0a.25.25 0 0 1 0 .354v-.354Zm-.354.354-4.47-4.47 4.823 4.47a.25.25 0 0 1-.353 0Z"/></svg></span>
+                    Назад
+                </a>
+            </div>
+            {{ include_component('bitrix:breadcrumb', '', {
+                'START_FROM': 2,
+            }) }}
+        </div>
+    </div>
+</section>
+
+{{ include_component("investportal:main.intro", "", {
+    'SECTION': arResult['ITEM']['CODE'],
+    'IBLOCK': 'sfery-rosta-intro',
+}) }}
+
+{{ include_component("investportal:main.block", "menu", {
+    'SECTION': arResult['ITEM']['CODE'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'sfery-rosta-menu',
+    'FORM_SHOW': 'Y',
+    'FORM_TITLE': 'Оставьте заявку',
+    'FORM_TEXT': 'Для обсуждения деталей вы можете связаться с нами',
+    'FORM_BUTTON_TEXT': 'Оставить заявку',
+}) }}
+
+<section id="o-klastere">
+{{ include_component(
+    "investportal:achievements",
+    ".default",
+    {
+        "IBLOCK_CODE": 'achievements',
+        "IBLOCK_TYPE": "content",
+        "ELEMENT_CODE": ['square', 'land'],
+        "PROPERTY_CODE": [],
+        "SECTION_CODE": arResult['ITEM']['CODE'],
+    }
+) }}
+</section>
+<section id="infrastruktura">
+{{ include_component("investportal:munitsipalitety.cards", "infrastructure", {
+    'ELEMENT_CODE': arResult['ITEM']['CODE'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'munitsipalitety',
+    'PROPERTIES_CODE': ['INFRASTRUCTURE_TITLE', 'INFRASTRUCTURE_TEXT', 'INFRASTRUCTURE_IMAGE']
+}) }}
+</section>
+<section id="resursy">
+{{ include_component("investportal:main.block", "two_cards_municipality", {
+    'SECTION': arResult['ITEM']['CODE'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'sr_two_block',
+}) }}
+</section>
+
+{% set investprojects = [] %}
+{% for investproject in arResult['ITEM']['LINK_INVESTPROJECTS'] %}
+    {% set investprojects = investprojects|merge([investproject['PROPERTY_VALUE']['ID']]) %}
+{% endfor %}
+<section id="investproekty" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="news-wrapper__header">
+            <div class="headline headline_size-h2 headline_padding-none">
+            {% if (arResult['ITEM']['TITLE_INVESTPROJECTS']['PROPERTY_VALUE'] is not empty) %}
+                {{ arResult['ITEM']['TITLE_INVESTPROJECTS']['PROPERTY_VALUE'] }}
+            {% else %}
+                Инвестпроекты
+            {% endif %}  
+            </div>
+            <a class="button button_size-s button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все инвестпроекты</a>
+        </div>
+        {% if (arResult['ITEM']['SUBTITLE_INVESTPROJECTS']['PROPERTY_VALUE'] is not empty) %}
+            <div class="description description_size-p1">{{ arResult['ITEM']['SUBTITLE_INVESTPROJECTS']['PROPERTY_VALUE'] }}</div>
+        {% endif %}  
+
+        {{ include_component("investportal:prtab", "munitsipalitety", {
+            "COMPONENT_TEMPLATE": "munitsipalitety",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "",
+            "SECTION_ID": "1",
+            "ITEMS_COUNT": 3,
+            "BRANCH": arParams['FILTERS']['BRANCH'],
+            "IDS": investprojects,
+            "PAGE_TYPE": "list",
+        }) }}
+
+        <div class="button-mobile"><a class="button button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все инвестпроекты</a></div>
+    </div>
+</section>
+
+{% set investkeys = [] %}
+{% for investkey in arResult['ITEM']['LINK_INVESTKEYS'] %}
+    {% set investkeys = investkeys|merge([investkey['PROPERTY_VALUE']['ID']]) %}
+{% endfor %}
+<section id="investkeysy" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="news-wrapper__header">
+            <div class="headline headline_size-h2 headline_padding-none">
+            {% if (arResult['ITEM']['TITLE_INVESTKEYS']['PROPERTY_VALUE'] is not empty) %}
+                {{ arResult['ITEM']['TITLE_INVESTKEYS']['PROPERTY_VALUE'] }}
+            {% else %}
+                Инвесткейсы
+            {% endif %}  
+            </div>
+            <a class="button button_size-s button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все инвесткейсы</a>
+        </div>
+        {% if (arResult['ITEM']['SUBTITLE_INVESTKEYS']['PROPERTY_VALUE'] is not empty) %}
+            <div class="description description_size-p1">{{ arResult['ITEM']['SUBTITLE_INVESTKEYS']['PROPERTY_VALUE'] }}</div>
+        {% endif %}
+        {{ include_component("investportal:prtab", "munitsipalitety", {
+            "COMPONENT_TEMPLATE": "munitsipalitety",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "",
+            "SECTION_ID": "4",
+            "ITEMS_COUNT": 3,
+            "IDS": investkeys,
+            "PAGE_TYPE": "list",
+        }) }}
+
+        <div class="button-mobile"><a class="button button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все инвесткейсы</a></div>
+    </div>
+</section>
+
+<section id="novosti">
+{{ include_component(
+    "investportal:newsmunitsipalitety",
+    ".default",
+    {
+        "COMPONENT_TEMPLATE": ".default",
+        "HEROTITLE": "Новости",
+        "IBLOCK_ID": "9",
+        "IBLOCK_TYPE": "content",
+        "PROPERTY_CODE": "",
+        "SECTION_ID": "",
+        'COUNT': 3,
+        'LINK_NEWS': arResult['ITEM']['LINK_NEWS']
+    }
+) }}
+</section>
+
+<section id="invest-profil">
+{{ include_component("investportal:munitsipalitety.cards", "profile", {
+    'ELEMENT_CODE': arResult['ITEM']['CODE'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'munitsipalitety',
+    'PROPERTIES_CODE': ['INVESTMNET_TITLE', 'INVESTMNET_TEXT', 'INVESTMNET_IMAGE', 'INVESTMNET_FILE']
+}) }}
+</section>
+
+{{ include_component("investportal:main.block", "ask.any", {
+    'SECTION': arResult['ITEM']['CODE'],
+    'IBLOCK': 'ask',
+    'IBLOCK_TYPE': 'content'
+}) }}
+
+</div>

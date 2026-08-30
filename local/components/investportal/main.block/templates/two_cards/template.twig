@@ -1,0 +1,27 @@
+<section id="{{ arResult['HEADER']['taghref']['PROPERTY_VALUE']}}" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            <div class="card__item card__item_column card__item_border">
+                <div class="headline headline_size-h2">{{arResult['HEADER']['DETAIL_TEXT']}}</div>
+
+                <div class="list-content">
+                    {% for item in arResult['HEADER']['list_content'] %}
+                        <div class="list-content__item">{{item['PROPERTY_VALUE']}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card__item card__item_padding-none">
+
+                <div class="image-container image-container_bg full-image
+                            {{arResult['HEADER']['hasmask'] is not empty ? 'image-mask' : '' }}"
+                     style="{{arResult['HEADER']['hasmask'] is not empty ?
+                     "--bg-mask: url(" ~ get_src_by_id(arResult['HEADER']['DETAIL_PICTURE']) ~ ");" : ''}}
+                             background-image: url({{ get_src_by_id(arResult['HEADER']['DETAIL_PICTURE'])}})">
+                    <div class="image-mask__top"></div>
+                    <div class="image-mask__bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

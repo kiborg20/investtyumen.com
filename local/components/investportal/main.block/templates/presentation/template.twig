@@ -1,0 +1,19 @@
+<section class="seaction section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="headline headline_size-h2">Презентации</div>
+
+        <div class="link-cards">
+            {% for item in arResult['ITEMS'] %}
+            <div class="link-cards__item">
+                <a class="link-cards__link link-cards__link-column"
+                   href="{{item['IT_FILE'] is empty ? item['href']['PROPERTY_VALUE'] : get_src_by_id(item['IT_FILE']['PROPERTY_VALUE'])}}">
+                    <div class="link-cards__content">
+                        <div class="description description_size-p1 description_padding-none">{{ item['NAME'] }}</div>
+                        <div class="icon-block icon-block_theme-white icon-block_size-m"></div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

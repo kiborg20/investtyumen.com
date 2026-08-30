@@ -1,0 +1,17 @@
+<section style="padding-bottom: 0px" class="section section_padding-s">
+    <div class="wrapper wrapper_mode-l">
+        <div class="person-cards">
+            {% for item in arResult['ITEMS'] %}
+            <a href="{{ item['CODE'] }}/" class="person-cards__item">
+                <div class="person-cards__image" style="background-image: url({{ get_src_by_id(item['PREVIEW_PICTURE']) }})"></div>
+
+                <div class="headline headline_size-h5">{{ item['IT_STOR_FIO']['PROPERTY_VALUE'] }}</div>
+
+                <div class="description description_padding-top-xs description_c-black-60 description_size-p2 description_line-20">
+                    <p>{{ item['IT_STOR_DOL']['PROPERTY_VALUE'] }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

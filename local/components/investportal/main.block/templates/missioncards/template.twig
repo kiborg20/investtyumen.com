@@ -1,0 +1,21 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card__wrapper card__wrapper-auto card_theme-transparent">
+            <div class="card-mission card__item card__item_between card__item-theme-image">
+                <div class="label">{{ arResult['HEADER']['DETAIL_TEXT'] }}</div>
+                <div class="headline headline_size-h3">
+                    {{ arResult['HEADER']['PREVIEW_TEXT'] }}
+                </div>
+            </div>
+            <div class="card__item card__item_border card__item_column">
+                <div class="label description_padding-bottom-none">{{ arResult['HEADER']['NAME'] }}</div>
+
+                <div class="list-content">
+                    {% for item in arResult['HEADER']['tasks'] %}
+                        <div class="list-content__item">{{ item['PROPERTY_VALUE'] }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

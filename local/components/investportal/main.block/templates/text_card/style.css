@@ -1,0 +1,69 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/page-menu.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/card-slider.css");
+@import url("/local/components/investportal/newsonmain/templates/.default/style.css");
+
+.card-advantage {
+  display: flex;
+  height: 480px;
+  padding: 20px;
+  flex-wrap: nowrap;
+  border-radius: var(--border-large);
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+video.video-frame {
+  object-fit: cover;
+}
+
+.video-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+}
+
+.video-frame__container {
+  position: relative;
+  width: 100%;
+  height: 762px;
+}
+
+.video-frame__button {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  top: calc(50% - 24px);
+  left: calc(50% - 30px);
+}
+
+.video-frame__button.playing {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .video-frame__container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-container_bg.full-image {
+    height: 266px;
+  }
+
+  .card-advantage {
+    height: 144px;
+  }
+
+  .video-frame__container {
+    height: 192px;
+  }
+}

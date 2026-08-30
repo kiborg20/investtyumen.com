@@ -1,0 +1,47 @@
+<section id="{{ arResult['HEADER']['taghref']['PROPERTY_VALUE']}}" class="section">
+    <div class="wrapper wrapper_mode-l">
+        {% if arResult['HEADER']['tag']['PROPERTY_VALUE']|length %}
+        <div class="label">{{ arResult['HEADER']['tag']['PROPERTY_VALUE'] }}</div>
+        {% endif %}
+        <div>
+            <div class="heaedline headline_size-h2">{{arResult['HEADER']['NAME']}}</div>
+
+            {% if arResult['HEADER']['block_description']['PROPERTY_VALUE'] %}
+            <div class="description description_size-p1">{{arResult['HEADER']['block_description']['PROPERTY_VALUE']}}</div>
+            {% endif %}
+        </div>
+
+        <div class="news news_two">
+            <div class="news__item">
+                <div class="news__image"><img alt="" src="{{get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE'])}}" /></div>
+
+                <div class="news__body">
+                    <div class="news__title">{{arResult['HEADER']['header_text_1']['PROPERTY_VALUE']}}</div>
+
+                    <div class="description description_size-p1 description_padding-top-xl description_padding-bottom-none">{{arResult['HEADER']['PREVIEW_TEXT']}}</div>
+                    <div class="list-content">
+                        {% for listItem in arResult['HEADER']['list_content_1'] %}
+                            <div class="list-content__item">{{ listItem['PROPERTY_VALUE'] }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="news__item">
+                <div class="news__image"><img alt="" src="{{get_src_by_id(arResult['HEADER']['DETAIL_PICTURE'])}}" /></div>
+
+                <div class="news__body">
+                    <div class="news__title">{{arResult['HEADER']['header_text_2']['PROPERTY_VALUE']}}</div>
+
+                    <div class="description description_size-p1 description_padding-top-xl description_padding-bottom-none">{{arResult['HEADER']['DETAIL_TEXT']}}</div>
+
+                    <div class="list-content">
+                        {% for listItem in arResult['HEADER']['list_content_2'] %}
+                            <div class="list-content__item">{{ listItem['PROPERTY_VALUE'] }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

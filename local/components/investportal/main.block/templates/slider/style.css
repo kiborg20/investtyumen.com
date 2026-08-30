@@ -1,0 +1,58 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/pagination.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/link-card.css");
+
+
+.card-advantage {
+  display: flex;
+  height: 480px;
+  padding: 20px;
+  flex-wrap: nowrap;
+  border-radius: var(--border-large);
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.tour-program__row .list-content {
+  margin-top: var(--padding-xxl);
+}
+
+.tour-company__row .description {
+  margin-top: var(--padding-xxl);
+  margin-bottom: 0;
+}
+
+.tour-company__row .list-content {
+  margin-top: var(--padding-xxl);
+}
+
+.tour-company__row .list-content .list-content__item a[download] {
+  padding: 0;
+}
+
+@media (max-width: 1023px) {
+  .image-container_bg.full-image {
+    height: 208px;
+  }
+
+  .card-advantage {
+    height: 308px;
+    border-radius: 12px
+  }
+}
+
+@media (max-width: 767px) {
+  .image-container_bg.full-image {
+    height: 296px;
+  }
+
+  .card-advantage {
+    height: 144px;
+  }
+}

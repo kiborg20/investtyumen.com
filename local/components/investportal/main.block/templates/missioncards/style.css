@@ -1,0 +1,7 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/person-card.css");
+
+.card-mission .label {
+  margin-bottom: 60px;
+}

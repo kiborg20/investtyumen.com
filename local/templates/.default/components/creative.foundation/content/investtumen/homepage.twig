@@ -1,0 +1,252 @@
+{{ include_component(
+    "investportal:mainSlider",
+    ".default",
+    {
+        "COMPONENT_TEMPLATE": "homepage",
+        "HEROTITLE": "Тюменская область&nbsp;&mdash; территория комфорта для жизни и&nbsp;бизнеса",
+        "IBLOCK_ID": "1",
+        "IBLOCK_TYPE": "pagesmain",
+        "PROPERTY_CODE": []
+    }
+) }}
+
+{{ include_component("investportal:main.list", "advantages", {
+    'IBLOCK': 'advantages',
+    'IBLOCK_TYPE': 'pagesmain',
+    'PROPERTIES_CODE': ['TAGS', 'LINK']
+}) }}
+
+{{ include_component(
+    "investportal:achievements",
+    ".default",
+    {
+        "IBLOCK_CODE": 'achievements',
+        "IBLOCK_TYPE": "pagesmain",
+        "ELEMENT_CODE": "for-home",
+        "PROPERTY_CODE": []
+    }
+) }}
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-white">
+            <div class="card__item card__item_between">
+                <div class="row">
+                    <div class="label"><p>Обращение губернатора</p></div>
+
+                    <div class="headline headline_size-h3"><p>Регион первых&nbsp;&mdash; это наше настоящее и&nbsp;будущее. Будущее&nbsp;&mdash; это новые успешные и&nbsp;амбициозные проекты вместе с&nbsp;надёжными и&nbsp;сильными партнёрами.</p></div>
+
+                    <div class="description description_c-black-60"><p>Александр Викторович Моор</p></div>
+                </div>
+
+                <div class="row"><a data-open-modal="ask-question" class="button button_size-m button_theme-blue" href="#">Написать обращение</a></div>
+            </div>
+
+            <div class="card__item">
+                <div class="image-container image-container_bg person-image" style="background-image: url('/statics/persone-governor.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ include_component(
+    "investportal:sfery.rosta", ".default",
+    {
+        'SECTION': "growth-area",
+        'IBLOCK_CODE': 'structure',
+        'IBLOCK_TYPE': 'content'
+    }
+) }}
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="main-projects">
+            <div class="main-projects__item">
+                <div class="headline headline_size-h2">Сопровождение инвестиционных проектов</div>
+
+                <div class="description description_size-p1"><p>Осуществляем поддержку через схему взаимодействия органов государственной власти с&nbsp;инициаторами проектов по&nbsp;принципу &laquo;одного окна&raquo;.</p></div>
+
+                <a class="button button_size-m button_theme-blue" href="/investor/ofis-soprovozhdenia-investora/soprovozhdenie/">Подробнее</a>
+            </div>
+
+            <div class="main-projects__item">
+                <div class="card-items">
+                    <a href="/investor/ofis-soprovozhdenia-investora/soprovozhdenie/" class="card-items__item card-items__item_hovered">
+                        <div class="card-header">
+                            <div class="icon-block">01</div>
+
+                            <div class="more-link">
+                                <span>Подробнее</span>
+                                <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="headline headline_size-h5"><p>Знакомитесь с регионом и подаёте заявку</p></div>
+                        </div>
+                    </a>
+
+                    <a href="/investor/support-measures/instrumenty-imushchestvennoj-podderzhki/" class="card-items__item card-items__item_hovered">
+                        <div class="card-header">
+                            <div class="icon-block">02</div>
+
+                            <div class="more-link">
+                                <span>Подробнее</span>
+                                <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="headline headline_size-h5"><p>Помогаем с подбором площадки</p></div>
+                        </div>
+                    </a>
+
+                    <a href="/investor/ofis-soprovozhdenia-investora/soprovozhdenie/" class="card-items__item card-items__item_hovered">
+                        <div class="card-header">
+                            <div class="icon-block">03</div>
+
+                            <div class="more-link">
+                                <span>Подробнее</span>
+                                <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="headline headline_size-h5"><p>Сопровождаем на всех этапах. Проверяем документы для рассмотрения комиссией</p></div>
+                        </div>
+                    </a>
+
+                    <a href="/investor/support-measures/instrumenty-finansovoy-podderzhki/" class="card-items__item card-items__item_hovered">
+                        <div class="card-header">
+                            <div class="icon-block">04</div>
+
+                            <div class="more-link">
+                                <span>Подробнее</span>
+                                <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="headline headline_size-h5"><p>Предложим меры государственной поддержки</p></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="headline headline_size-h2">Инвестиционные проекты</div>
+
+        <div class="tabs">
+            <div class="tabs__item">
+                <a data-tab="1"  class="button button_theme-blue" href="#">Реализованные</a>
+                <a data-tab="2"  class="button button_theme-transparent" href="#">В процессе</a>
+                <a data-tab="4"  class="button button_theme-transparent" href="#">Готовые к инвестированию</a>
+            </div>
+
+            <div class="tabs__item">
+                <a class="button button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все кейсы</a>
+            </div>
+        </div>
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "COMPONENT_TEMPLATE": "homepage",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 1
+        }) }}
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "COMPONENT_TEMPLATE": "homepage",
+            "HEROTITLE": "Заголовок",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 2
+        }) }}
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "COMPONENT_TEMPLATE": "homepage",
+            "HEROTITLE": "Заголовок",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 3
+        }) }}
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 4
+        }) }}
+
+        <div class="button-mobile"><a class="button button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все кейсы</a></div>
+    </div>
+</section>
+
+
+    {{ include_component("investportal:topstory", "", {
+        "IBLOCK_CODE": "tophostory",
+        "IBLOCK_TYPE": "content",
+        "PROPERTY_CODE": ["IT_STOR_DOL", "IT_STOR_FIO", "IT_STOR_SUB", "HOME_IMAGE"],
+        "ITEMS_COUNT": 5,
+    }) }}
+
+{{ include_component(
+    "investportal:newsonmain",
+    ".default",
+    {
+        "COMPONENT_TEMPLATE": ".default",
+        "HEROTITLE": "Заголовок",
+        "IBLOCK_ID": "9",
+        "IBLOCK_TYPE": "content",
+        "PROPERTY_CODE": "",
+        "SECTION_ID": "",
+        'COUNT': 3
+    }
+) }}
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="presonal-info">
+            <div class="presonal-info__item">
+                <div class="headline headline_size-h1">Есть проект? Воспользуйтесь<br />личным кабинетом инвестора</div>
+
+                <a class="button button_theme-blue button_size-m" href="https://investintyumen.ru/auth/" target="_blank">Войти в личный кабинет</a>
+            </div>
+
+            <div class="presonal-info__item">
+                <div class="label">В личном кабинете вы сможете:</div>
+
+                <div class="invest-list">
+                    <div class="invest-list__item">
+                        <div class="icon-block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#fff" d="M14 14a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1 0-1.5h4.5A.75.75 0 0 1 14 14ZM16 10a.75.75 0 0 1-.75.75h-6.5a.75.75 0 0 1 0-1.5h6.5A.75.75 0 0 1 16 10Z"/><path fill="#fff" fill-rule="evenodd" d="M19.414 6.414A2 2 0 0 1 20 7.828V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8.172a2 2 0 0 1 1.414.586l3.828 3.828ZM18.5 7.828V20a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5h8.172a.5.5 0 0 1 .353.146l3.829 3.829a.5.5 0 0 1 .146.353Z" clip-rule="evenodd"/></svg></div>
+
+                        <div class="headline headline_size-h5">Подать проект на сопровождение</div>
+                    </div>
+
+                    <div class="invest-list__item">
+                        <div class="icon-block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#fff" fill-rule="evenodd" d="M16.5 6c0 2.23-1.622 4.08-3.75 4.438v6.812a.75.75 0 0 1-1.5 0v-6.812A4.501 4.501 0 0 1 12 1.5 4.5 4.5 0 0 1 16.5 6ZM12 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd"/><path fill="#fff" d="M9 14.659c0-.471-.426-.83-.884-.72C5.09 14.666 3 16.21 3 18c0 2.485 4.03 4.5 9 4.5s9-2.015 9-4.5c0-1.79-2.09-3.335-5.116-4.06-.458-.11-.884.248-.884.719 0 .362.257.67.608.757.793.195 1.496.45 2.085.744 1.47.734 1.807 1.472 1.807 1.84 0 .368-.338 1.106-1.807 1.84-1.38.69-3.39 1.16-5.693 1.16-2.303 0-4.314-.47-5.693-1.16C4.837 19.106 4.5 18.368 4.5 18c0-.368.338-1.106 1.807-1.84a10.075 10.075 0 0 1 2.085-.744A.788.788 0 0 0 9 14.66Z"/></svg></div>
+
+                        <div class="headline headline_size-h5">Найти площадку для развития бизнеса</div>
+                    </div>
+
+                    <div class="invest-list__item">
+                        <div class="icon-block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#fff" fill-rule="evenodd" d="M10.105 12.635a2.533 2.533 0 0 0 2.527-2.54 2.533 2.533 0 0 0-2.527-2.54 2.533 2.533 0 0 0-2.526 2.54 2.533 2.533 0 0 0 2.526 2.54Zm0-1.524c.558 0 1.01-.455 1.01-1.016 0-.56-.452-1.016-1.01-1.016s-1.01.455-1.01 1.016c0 .561.452 1.016 1.01 1.016Z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M0 6.032C0 4.91.905 4 2.021 4H18.19c1.116 0 2.02.91 2.02 2.032v8.127a2.026 2.026 0 0 1-2.02 2.031H2.02A2.026 2.026 0 0 1 0 14.16V6.032Zm1.516 0c0-.28.226-.508.505-.508H18.19c.278 0 .505.227.505.508v8.127c0 .28-.227.508-.506.508H2.021a.507.507 0 0 1-.505-.508V6.032Z" clip-rule="evenodd"/><path fill="#fff" d="M20.21 18.476a2.28 2.28 0 0 0 2.274-2.285V8.825c0-.42.34-.762.758-.762a.76.76 0 0 1 .758.762v7.366C24 18.294 22.303 20 20.21 20H3.79a.76.76 0 0 1-.758-.762c0-.42.339-.762.757-.762H20.21Z"/></svg></div>
+
+                        <div class="headline headline_size-h5">Подобрать льготное финансирование</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

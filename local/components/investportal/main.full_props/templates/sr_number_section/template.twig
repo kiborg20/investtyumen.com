@@ -1,0 +1,30 @@
+<section id="forms_participation" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            <div class="card__item card__item_padding-none">
+                <div class="headline headline_size-h2">{{ arResult['SECTION']['DESCRIPTION'] }}</div>
+            </div>
+
+            <div class="card__item card__item_padding-none">
+                <div class="card-items">
+                    {% for item in arResult['ITEMS'] %}
+                    <div class="card-items__item">
+                        <div class="card-header">
+                            <div class="icon-block">0{{ loop.index }}</div>
+
+                            <div class="headline headline_size-h5">{{ item['NAME'] }}</div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="list-content">
+                                {% for prop in item['PROP']['link'] %}
+                                <div class="list-content__item">{{ prop }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

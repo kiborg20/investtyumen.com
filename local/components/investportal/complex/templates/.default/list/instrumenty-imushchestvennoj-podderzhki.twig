@@ -1,0 +1,16 @@
+{{ include_component("investportal:main.intro", "investor", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+
+{{ include_component("investportal:main.block", "list", {
+    'IBLOCK': 'propertysupporttools',
+    'IBLOCK_TYPE': 'pforinvestor',
+}) }}
+
+{{ include_component("investportal:main.block", "ask", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'ask',
+    'IBLOCK_TYPE': 'content'
+}) }}

@@ -1,0 +1,22 @@
+{{ include_component("investportal:main.intro", "investor", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+
+{# <pre>
+{{dump(arParams)}}
+</pre> #}
+{{ include_component("investportal:main.block", "investmentprojects", {
+    'IS_EMPTY': true,
+    'FILTERS': arParams['FILTERS']
+}) }}
+
+{{ include_component("investportal:main.block", "ask", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'ask',
+    'IBLOCK_TYPE': 'content'
+}) }}
+
+
+

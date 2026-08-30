@@ -1,0 +1,61 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+
+.section_questions {
+    padding-bottom: 40px;
+}
+
+.question-theme__title {
+    color: var(--color-blue);
+    margin-bottom: var(--padding-xl);
+}
+
+.question-theme__content {
+    margin-bottom: 40px;
+}
+
+.question-item {
+    border: 1px solid var(--color-black-40);
+    border-radius: 12px;
+    padding: var(--padding-xxl);
+    margin-bottom: var(--padding-small);
+    color: var(--background-black);
+}
+
+.question-item__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(var(--font-size-h5)*1px);
+    line-height: 28px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.question-item__title svg {
+    min-width: 12px;
+    height: 6px;
+    margin-left: var(--padding-xl);
+}
+
+.question-item__title svg > path {
+    stroke: var(--background-black);
+}
+
+.question-item__answer {
+    display: none;
+    padding-top: var(--padding-xl);
+    font-size: calc(var(--font-size-p1)*1px) ;
+    line-height: 24px;
+}
+
+.question-item_opened .question-item__answer {
+    display: block;
+}
+
+.question-item_opened .question-item__title > svg {
+    transform: rotate(180deg);
+}
+
+.question-item_opened .question-item__title > svg > path {
+    stroke: var(--color-blue);
+}

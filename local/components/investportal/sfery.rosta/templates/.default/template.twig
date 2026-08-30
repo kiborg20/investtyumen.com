@@ -1,0 +1,63 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="label"><p>Сферы роста</p></div>
+        <div class="card card_theme-transparent card_main-slider">
+            <div class="card__item card__item_padding-none">
+                <ul class="list-slider">
+                    {% for item in arResult['ITEMS'] %}
+                        {% if item['IN_MENU'] %}
+                        <li class="list-slider__item"><a data-slide-list="id{{ item.ID }}" {% if loop.first %}class="current"{% endif %}
+                                                         href="/growth-area/{{ item.CODE }}/">{{ item.NAME }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="card__item card__item_padding-none">
+                {% for item in arResult['ITEMS'] %}
+                    {% if item['IN_MENU'] %}
+                        <a data-slide-id{{ item.ID }} href="/growth-area/{{ item.CODE }}/"
+                           class="content-slider {% if loop.first %}content-slider_visible{% endif %}">
+                            <div class="content-slider__image">
+                                {% if item.PREVIEW_PICTURE %}
+                                    <img alt="" src="{{ item.PREVIEW_PICTURE }}"/>
+                                {% else %}
+                                    <img alt="" src="/statics/slide-growth.jpg"/>
+                                {% endif %}
+                            </div>
+                            <div class="content-slider__body">
+                                <div class="content-slider__column">
+                                    <div class="content-slider__text"><p
+                                                class="headline headline_size-h5">{{ item.NAME }}</p></div>
+                                    {% if item.RIGHT_UP %}
+                                    <div class="content-slider__text">
+                                        <p class="description description_size-p2 description_padding-none">{{ item.RIGHT_UP }}</p>
+
+                                        <p class="headline headline_size-h4">{{ item.RIGHT_DOWN }}</p>
+                                    </div>
+                                    {% endif %}
+                                    {% if item.LEFT_UP %}
+                                    <div class="content-slider__text">
+                                        <p class="description description_size-p2 description_padding-none">{{ item.LEFT_UP }}</p>
+
+                                        <p class="headline headline_size-h4">{{ item.LEFT_DOWN }}</p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="content-slider__column">
+                                    <p class="description description_size-p1 description_padding-none">
+                                        Подробнее
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path
+                                                        fill="#4A66F5"
+                                                        d="M5.698 12.36 10.058 8l-4.36-4.36a.667.667 0 0 1 .943-.943l4.832 4.832a.666.666 0 0 1 0 .942l-4.832 4.832a.667.667 0 1 1-.943-.943Z"/></svg></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

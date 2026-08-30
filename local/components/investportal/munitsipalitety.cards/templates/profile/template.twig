@@ -1,0 +1,38 @@
+{% for item in arResult['ITEMS'] %}
+    <section id="investprofile" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            <div class="card__item card__item_between card__item_border">
+                <div class="row">
+                    <div class="headline headline_size-h3">
+                        <p>
+                            {{item['INVESTMNET_TITLE']}}
+                        </p>
+                    </div>
+                    <div class="description description_size-p1 description_padding-none">
+                        <p>{{item['INVESTMNET_TEXT']['TEXT']}}</p>
+                    </div>
+                </div>
+                {% if item['INVESTMNET_FILE'] is not empty %}
+                <div class="row">
+                    <a class="button button_theme-blue button_size-m" href="{{item['INVESTMNET_FILE']}}"
+                        download="{{item['NAME']}}_{{item['INVESTMNET_TITLE']}}" target="_blank">
+                        <span class="button__icon button__icon_left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                <path fill="currentColor" d="M12.75 13.19 15.94 10A.75.75 0 1 1 17 11.06l-4.47 4.47a.75.75 0 0 1-1.06 0L7 11.06A.75.75 0 1 1 8.06 10l3.19 3.19V2.75a.75.75 0 1 1 1.5 0v10.44Z"></path>
+                                <path fill="currentColor" d="M4.75 14.75a.75.75 0 1 0-1.5 0V19c0 .967.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-4.25a.75.75 0 1 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25v-4.25Z"></path>
+                            </svg></span>
+                        <span>Скачать презентацию</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="card__item card__item_padding-none">
+                <div class="image-container image-container_bg person-image"
+                    style="background-image: url({{item['INVESTMNET_IMAGE']}})">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endfor %}

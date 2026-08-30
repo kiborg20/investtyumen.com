@@ -1,0 +1,87 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+
+a.search-page-params {
+	border-bottom: 1px dashed blue;
+	text-decoration: none;
+}
+div.search-page-params {
+	margin-top: 6px;
+}
+.search-item-rate {font-size: 11px;}
+
+
+.page-header-search {
+	display: flex;
+}
+
+.page-header-search form {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.page-header-search__block {
+	display: flex;
+	width: 100%;
+	background: var(--background-white);
+	border-radius: var(--border-medium);
+}
+
+.page-header-search__input {
+	font-size: calc(var(--font-size-p2)*1px);
+	line-height: 20px;
+	color: var(--color-basic);
+	caret-color: var(--color-blue);
+	flex: 0 1 100%;
+}
+
+.page-header-search__input::placeholder {
+	color: var(--color-black-40);
+}
+
+.page-header-search__button {
+	display: flex;
+	padding-right: 4px;
+	align-items: center;
+}
+
+.page-header-search button[type="submit"] {
+	margin-left: 24px;
+}
+
+.section-not-found {
+	display: flex;
+}
+
+.section-not-found h2 {
+	text-align: center;
+	margin-top: 24px;
+}
+
+.section-not-found .wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-not-found .icon-block {
+	margin-bottom: var(--padding-xxl);
+}
+
+.search-results_item {
+	border-bottom: 1px solid var(--color-black-40);
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.search-results_item .headline_size-h5 {
+	margin-bottom: 8px;
+}
+
+.search-results_item .headline_size-h5:hover {
+	color: var(--background-blue);
+}
+
+.search-results_item .description {
+	margin: 8px 0;
+}

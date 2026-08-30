@@ -1,0 +1,84 @@
+<section class="section">
+    <div class="wrapper wrapper_mode-l">
+        <div class="breadscrumbs">
+            <div class="breadscrumbs__button">
+                <a onclick="history.back()" href="#">
+                    <span class="button button_theme-transparent button_size-s button_padding-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="M13.651 7.707a.25.25 0 1 0-.354-.354l-4.469 4.47a.25.25 0 0 0 0 .354l4.823-4.47Zm0 0-3.939 3.94-.354.353m4.293-4.293L9.358 12m0 0 .354.354M9.358 12l.354.354m0 0 3.94 3.939m-3.94-3.94 3.94 3.94m0 0a.25.25 0 0 1 0 .354v-.354Zm-.354.354-4.47-4.47 4.823 4.47a.25.25 0 0 1-.353 0Z"/></svg></span>
+                    Назад
+                </a>
+            </div>
+            {{ include_component('bitrix:breadcrumb', '', {
+                'START_FROM': 2,
+            }) }}
+        </div>
+    </div>
+</section>
+
+{{ include_component("investportal:main.intro", "investor", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+
+<section class="section section_padding-xxl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            <div class="card__item card__item_column card__item_padding-none">
+                <div class="headline headline_size-h4">
+                    Инвестиционная декларация Тюменской области направлена на информирование субъектов инвестиционной деятельности:
+                </div>
+
+                <div class="list-content">
+                    <div class="list-content__item">О перспективах развития Тюменской области, необходимых инвесторам для принятия решения относительно реализации инвестиционных проектов в Тюменской области;</div>
+
+                    <div class="list-content__item">Об инвестиционных преимуществах ведения инвестиционной деятельности в Тюменской области, мерах поддержки инвестиций и инвестиционных проектов;</div>
+
+                    <div class="list-content__item">О ключевых характеристиках Тюменской области, об инвестиционном потенциале и приоритетных направлениях для привлечения инвестиций;</div>
+
+                    <div class="list-content__item">Об инвестиционных обязательствах Тюменской области;</div>
+
+                    <div class="list-content__item">Об инвестиционной команде Тюменской области и распределении ответственности внутри нее.</div>
+                </div>
+            </div>
+
+            <div class="card__item card__item_padding-none">
+                <div data-image-zoom class="image-container">
+                    <img src="/statics/infograph-mini.jpg" />
+                    <button data-image-zoom-button type="button" class="button button_theme-blue button-zoom">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.5114 14.0182C9.5114 14.4331 9.84766 14.7694 10.2626 14.7694C10.6774 14.7694 11.0137 14.4331 11.0137 14.0182V11.0137H14.0183C14.4331 11.0137 14.7694 10.6774 14.7694 10.2626C14.7694 9.84762 14.4331 9.51137 14.0183 9.51137H11.0137V6.50682C11.0137 6.09198 10.6774 5.75569 10.2626 5.75569C9.84766 5.75569 9.5114 6.09198 9.5114 6.50682V9.51137H6.50684C6.092 9.51137 5.7557 9.84762 5.7557 10.2626C5.7557 10.6774 6.092 11.0137 6.50684 11.0137H9.5114V14.0182Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10.2626C2 5.69925 5.69926 2 10.2626 2C14.8258 2 18.5251 5.69925 18.5251 10.2626C18.5251 12.2734 17.8059 14.1174 16.6121 15.5498L21.7801 20.7177C22.0733 21.011 22.0733 21.4866 21.7801 21.78C21.4867 22.0733 21.0111 22.0733 20.7178 21.78L15.5498 16.6121C14.1174 17.8059 12.2734 18.5251 10.2626 18.5251C5.69926 18.5251 2 14.8258 2 10.2626ZM10.2626 3.50227C6.52895 3.50227 3.50228 6.52893 3.50228 10.2626C3.50228 13.9961 6.52895 17.0228 10.2626 17.0228C12.1295 17.0228 13.8186 16.2669 15.0427 15.0427C16.267 13.8185 17.0228 12.1295 17.0228 10.2626C17.0228 6.52893 13.9962 3.50227 10.2626 3.50227Z" fill="white"/>
+                        </svg>
+                    </button>
+
+                    <div data-image-zoom-popup class="fixed-overlay popup__zoom-overlay modal-wrapper">
+                        <button data-image-zoom-close type="button" class="popup__zoom-close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.35529 5.23359C6.04525 4.92217 5.54264 4.9221 5.23253 5.23359C4.92249 5.54499 4.92249 6.04991 5.23253 6.36132L10.8783 12.0321L5.29651 17.6387C4.98646 17.9501 4.98646 18.455 5.29651 18.7664C5.60655 19.0779 6.10923 19.0779 6.41927 18.7664L12.0011 13.1599L17.5829 18.7664C17.893 19.0778 18.3957 19.0778 18.7057 18.7664C19.0158 18.455 19.0157 17.9501 18.7057 17.6387L13.1239 12.0321L18.7697 6.36133C19.0797 6.04992 19.0797 5.545 18.7697 5.23359C18.4596 4.92217 17.957 4.92218 17.6469 5.23359L12.0011 10.9044L6.35529 5.23359Z" fill="#252830"/>
+                            </svg>
+                        </button>
+                        <div class="popup__zoom">
+                            <div class="popup__zoom-container">
+                                <picture>
+                                    <source src="/statics/invest-declaration-infografika-mobile.png"
+                                            media="(max-width: 767px)">
+                                    <source src="/statics/invest-declaration-infografika-tablet.png"
+                                            media="(max-width: 1023px)">
+                                    <source src="/statics/invest-declaration-infografika-desktop.png"
+                                            media="(min-width: 1024px)">
+                                    <img src="/statics/invest-declaration-infografika-desktop.png" alt="Инфографика"/>
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ include_component("investportal:main.block", "files", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK': 'files',
+    'IBLOCK_TYPE': 'content'
+}) }}

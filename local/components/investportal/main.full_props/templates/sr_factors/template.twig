@@ -1,0 +1,28 @@
+{% if arResult['ITEMS'] %}
+<section id="factors" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="news-wrapper">
+            <div class="news-wrapper__header">
+                <div class="headline headline_size-h2 headline_padding-none">Факторы конкурентоспособности</div>
+            </div>
+            <div class="news news_two">
+                {% for item in arResult['ITEMS'] %}
+                <div class="news__item">
+                    <div class="news__image"><img alt="" src="{{ item.PREVIEW_PICTURE }}" /></div>
+
+                    <div class="news__body">
+                        <div class="headline headline_size-h4">{{ item['NAME'] }}</div>
+
+                        <div class="list-content">
+                            {% for factor in item['PROP']['factors'] %}
+                            <div class="list-content__item">{{ factor }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

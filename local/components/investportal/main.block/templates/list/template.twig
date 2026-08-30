@@ -1,0 +1,44 @@
+<section class="section section_padding-m">
+    <div class="wrapper wrapper_mode-l">
+        {% if arParams['FILTER'] is not empty %}
+            <div class="button-group">
+                <a data-tab="1" class="button button_theme-blue button_size-s" href="#">Региональные</a>
+                <a data-tab="2" class="button button_theme-transparent button_size-s" href="#">Федеральные</a>
+            </div>
+        {% endif %}
+
+        <div class="support-cards card card_theme-transparent">
+
+        {% for aItem in arResult['ITEMS'] %}
+            <div class="card__item card__item_border card__item_between card__item-s">
+                <div class="support-card___content">
+                    <div class="support-card__tags">
+                        {% for aValue in aItem['types'] %}
+                            <div class="support-card__tag">{{ aValue['PROPERTY_DESCRIPTION'] ?? aValue['PROPERTY_ENUM_VALUE'] }}</div>
+                        {% endfor %}
+                    </div>
+                    <h4 class="headline headline_size-h4"> {{ aItem['NAME'] }}</h4>
+                    <div class="description description_size-p1 description_padding-none">
+                        {{ aItem['PREVIEW_TEXT'] | raw }}
+                    </div>
+                </div>    
+                <div class="support-card__buttons">
+                    <a href="{{(aItem['CODE'] ~ "/")}}"
+                    class="button button_size-m button_theme-blue">Подробнее</a>
+                    {% if (aItem['href'] is not empty) %}
+                        <a href="{{ aItem['href']['PROPERTY_VALUE'] }}"
+                        class="button button_size-m button_theme-gray">
+                            {{ aItem['hrefname']['PROPERTY_VALUE'] }}
+                            <svg class="button__icon button__icon_right" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.86564 6.38672H16.555L4.93061 18.0111C4.8191 18.1226 4.75004 18.2605 4.72344 18.4047C4.71511 18.4498 4.71094 18.4956 4.71094 18.5414C4.71094 18.7333 4.78416 18.9253 4.93061 19.0717C4.96722 19.1083 5.00668 19.1404 5.04826 19.1678C5.33938 19.3601 5.73499 19.328 5.99127 19.0717L17.6157 7.44738V16.1367C17.6157 16.5509 17.9515 16.8867 18.3657 16.8867C18.7799 16.8867 19.1157 16.5509 19.1157 16.1367V5.63672C19.1157 5.2225 18.7799 4.88672 18.3657 4.88672H7.86564C7.45143 4.88672 7.11564 5.2225 7.11564 5.63672C7.11564 6.05093 7.45143 6.38672 7.86564 6.38672Z"
+                                    fill="#252830"/>
+                            </svg>
+                        </a>
+                    {% endif %}                    
+                 </div>   
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>

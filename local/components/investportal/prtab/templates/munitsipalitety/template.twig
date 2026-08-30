@@ -1,0 +1,87 @@
+<div class="cases cases_main" data-category="{{ arResult.0.IBLOCK_SECTION_ID }}">
+    {% for item in arResult %}
+    <div class="cases__item">
+        <div
+            class="cases__image"
+            {% if item.PREVIEW_PICTURE.src %} style="background-image: url({{ item.PREVIEW_PICTURE.src }})"{% endif %}
+        >
+            {% if item.PROPERTY_IT_IP_LOC_VALUE %}
+                <div class="badge badge_theme-light">{{ item.PROPERTY_IT_IP_LOC_VALUE }}</div>
+            {% endif %}
+
+            {% if item.PROPERTY_ICON_VALUE %}
+                <div class="badge badge_theme-blue-dark badge_industry">
+                    {{ item.PROPERTY_ICON_VALUE | raw}}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="cases__content-wrapper">
+            <div class="cases__content">
+                <div class="cases__text">
+                    <div class="headline headline_size-h5">{{ item.NAME }}</div>
+
+                    {% if item.PREVIEW_TEXT %}
+                        <div class="description description_size-p1 description_padding-s"><p>{{ item.PREVIEW_TEXT }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if 
+                    item.PROPERTY_IT_IP_VOL_VALUE 
+                    or item.PROPERTY_IT_IP_EQ_VALUE 
+                    or item.PROPERTY_IT_IP_SUM_FIRST_VALUE
+                    or item.PROPERTY_IT_IP_PAYBACK_VALUE
+                    or item.PROPERTY_IT_IP_PROFIT_VALUE
+                %}
+                    <div class="cases__list">
+                        <div class="list">
+                            {% if item.PROPERTY_IT_IP_VOL_VALUE %}
+                                <div class="list__item">
+                                    <div class="description description_padding-none description_size-p2">Объём инвестиций (млн ₽)</div>
+
+                                    <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_VOL_VALUE }}</div>
+                                </div>
+                            {% endif %}
+                            {% if item.PROPERTY_IT_IP_EQ_VALUE %}
+                                <div class="list__item">
+                                    <div class="description description_padding-none description_size-p2">Количество
+                                        рабочих мест
+                                    </div>
+
+                                    <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_EQ_VALUE }}</div>
+                                </div>
+                            {% endif %}
+                            {% if item.PROPERTY_IT_IP_SUM_FIRST_VALUE %}
+                                <div class="list__item">
+                                    <div class="description description_padding-none description_size-p2">Сумма первоначальных инвестиций (млн ₽)</div>
+
+                                    <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_SUM_FIRST_VALUE }}</div>
+                                </div>
+                            {% endif %}
+                            {% if item.PROPERTY_IT_IP_PAYBACK_VALUE %}
+                                <div class="list__item">
+                                    <div class="description description_padding-none description_size-p2">Срок окупаемости составляет</div>
+
+                                    <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_PAYBACK_VALUE }}</div>
+                                </div>
+                            {% endif %}
+                            {% if item.PROPERTY_IT_IP_PROFIT_VALUE %}
+                                <div class="list__item">
+                                    <div class="description description_padding-none description_size-p2">Средняя чистая ежемесячная прибыль</div>
+
+                                    <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_PROFIT_VALUE }}</div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="cases__buttons">
+                <a href="/investor/ofis-soprovozhdenia-investora/investment-projects/{{ item.CODE }}/" class="button button_size-m button_theme-blue">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

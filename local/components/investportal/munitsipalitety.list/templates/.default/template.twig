@@ -1,0 +1,29 @@
+{# <pre>
+{{dump(arResult['ITEMS'])}}
+</pre> #}
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="headline headline_size-h2">Муниципалитеты</div>
+        <div class="description description_size-p1">покрывающие все основные направления исследований</div>
+        <div class="card-items munitsipalitety-items">
+            {% for item in arResult['ITEMS'] %}
+                <a href="/growth-area/munitsipalnoe-obrazovanie/{{ item.CODE }}/" class="card-items__item card-items__item_hovered">
+                    <div class="card-header">
+                        <div class="icon-block">
+                            <img alt="" src="{{ item.PREVIEW_PICTURE }}" />
+                        </div>
+                        <div class="headline headline_size-h5"><p>{{ item.NAME }}</p></div>
+                        <div class="more-link">
+                            {# <span>Подробнее</span> #}
+                            <span class="more-link__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+{{ include_component("investportal:main.intro", "sucess-stories", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+<br>
+<br>
+{{ include_component("investportal:main.block", arParams['TEMPLATE'], {
+    'IBLOCK': arParams['IBLOCK_LIST'],
+    'IBLOCK_TYPE': arParams['IBLOCK_TYPE'],
+    'LIMIT': arParams['NEWS_COUNT'],
+    'FILTER': arParams['USE_FILTER'],
+    'FILTERS': arParams['FILTERS'],
+    'FILTERS_CODE': ['TYPE'],
+    'SORT_FIELD': 'ACTIVE_FROM',
+    'SORT_ORDER': 'DESC',
+}) }}
+
+{{ include_component("investportal:main.block", "presentation", {
+    'IBLOCK': 'presentation',
+    'IBLOCK_TYPE': 'content'
+}) }}
+
+<section padding class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            <div class="card__item card__item_between card__item_padding-none">
+                <div class="row">
+                    <div class="headline headline_size-h2"><p>Стань частью бренда<br />Invest Tyumen</p></div>
+
+                    <div class="description description_size-p1"><p>Если вы&nbsp;хотите использовать фирменную символику инвестиционного бренда Тюменской области для продвижения услуг или товаров вашей компании или стать амбассадором бренда, напишите нам, мы&nbsp;вышлем вам архив с&nbsp;элементами фирменного стиля.</p></div>
+                </div>
+
+                <div class="row"><a class="button button_size-m button_theme-blue" href="#">Получить архив</a></div>
+            </div>
+
+            <div class="card__item card__item_padding-none">
+                <div class="image-container image-container_bg person-image" style="background-image: url('/statics/photo.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</section>

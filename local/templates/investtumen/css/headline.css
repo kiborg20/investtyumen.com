@@ -1,0 +1,138 @@
+.headline {
+  color: var(--color-basic);
+}
+
+.headline_size-h1 {
+  font-size: calc(var(--font-size-h1)*1px);
+  line-height: 52px;
+  font-weight: 500;
+}
+
+.headline_size-h0 {
+  font-size: calc(var(--font-size-h0)*1px);
+  line-height: 72px;
+  font-weight: 500;
+}
+
+.headline_size-h1 + .description_size-p1 {
+  margin: 24px 0 0;
+}
+
+.headline_size-h2 {
+  margin-bottom: 24px;
+  font-size: calc(var(--font-size-h2)*1px);
+  line-height: 44px;
+  font-weight: 500;
+}
+
+.headline_size-h3 {
+  margin-bottom: 12px;
+  font-size: calc(var(--font-size-h3)*1px);
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.headline_size-h4 {
+  font-size: calc(var(--font-size-h4)*1px);
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.headline_size-h5 {
+  font-size: calc(var(--font-size-h5)*1px);
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.headline_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headline_padding-xxl {
+  margin-bottom: var(--padding-xxl);
+}
+
+.headline_padding-top-xxl {
+  margin-top: var(--padding-xxl);
+}
+
+.headline_padding-none {
+  margin-bottom: 0;
+}
+
+.headline_color-blue {
+  color: var(--color-blue);
+}
+
+.headline_color-white {
+  color: var(--color-white);
+}
+
+@media (max-width: 1023px) {
+  .headline_size-h0 {
+    font-size: calc(var(--font-size-h2)*1px);
+    line-height: 44px;
+  }
+
+  .headline_size-h1 {
+    font-size: calc(var(--font-size-h2)*1px);
+    line-height: 44px;
+  }
+
+  .headline_size-h2 {
+    font-size: calc(var(--font-size-h3)*1px);
+    line-height: 40px;
+  }
+
+  .headline_size-h3 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .headline_size-h5 {
+    font-size: calc(var(--font-size-h5)*0.9px);
+  }
+}
+
+@media (max-width: 767px) {
+  .headline_size-h0 {
+    font-size: calc(var(--font-size-h3)*1px);
+    line-height: 40px;
+  }
+
+  .headline_size-h1 {
+    font-size: calc(var(--font-size-h2)*1px);
+    line-height: 44px;
+  }
+
+  .headline_size-h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .headline_size-h3 {
+    font-size: calc(var(--font-size-p2)*2px);
+    line-height: 32px;
+  }
+
+  .headline_size-h4 {
+    font-size: calc(var(--font-size-h5)*1px);
+    line-height: 28px;
+  }
+
+  .headline_size-h5 {
+    font-size: calc(var(--font-size-h5)*0.9px);
+  }
+}
+
+@media (max-width: 375px) {
+  .headline_size-h1 {
+    font-size: calc(var(--font-size-h3)*1px);
+    line-height: 40px;
+  }
+
+  .headline_size-h3 {
+    font-size: calc(var(--font-size-h4)*1px);
+  }
+}

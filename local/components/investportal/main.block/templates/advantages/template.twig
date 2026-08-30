@@ -1,0 +1,21 @@
+
+<section id="other" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="headline headline_size-h2">Другие преимущества</div>
+
+        <div class="card-items card-items_nowrap">
+            {% for item in arResult['ITEMS'] %}
+                <a href="{{item['url']['PROPERTY_VALUE']}}" class="card-items__item">
+                    <div class="card-header">
+                        <div class="icon-block">{{item['icon']['PROPERTY_VALUE'] | raw}}</div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="headline headline_size-h5"><p>{{item['NAME']}}</p></div>
+                        <div class="description description_size-p1 description_padding-s description_padding-bottom-none">{{item['PREVIEW_TEXT']}}</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

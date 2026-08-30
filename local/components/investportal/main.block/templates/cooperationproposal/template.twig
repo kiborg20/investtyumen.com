@@ -1,0 +1,27 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <h2 class="headline headline_size-h2">Предложение по сотрудничеству</h2>
+
+        <div class="filter-panel button-group f2">
+            <div data-filter-cooperation-subject="238" class="button {{ (arParams['FILTERS']['subjects'] == '238' or arParams['FILTERS']['subjects'] is empty) ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersSubjectCooperationClick(this)'>Субъекты РФ</div>
+            <div data-filter-cooperation-subject="239" class="button {{ arParams['FILTERS']['subjects'] == '239' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersSubjectCooperationClick(this)'>Ближнее зарубежье</div>
+            <div data-filter-cooperation-subject="240" class="button {{ arParams['FILTERS']['subjects'] == '240' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersSubjectCooperationClick(this)'>Дальнее зарубежье</div>
+            <div data-filter-cooperation-subject="241" class="button {{ arParams['FILTERS']['subjects'] == '241' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersSubjectCooperationClick(this)'>Министерства РФ</div>
+        </div>
+
+        <div class="link-cards cooperation-subject-list">
+
+            {% for item in arResult['ITEMS'] %}
+            <div class="link-cards__item">
+                <a class="link-cards__link link-cards__link-column" href="{{ get_src_by_id(item['file']['PROPERTY_VALUE']) }}">
+                    <div class="link-cards__content">
+                        <div class="description description_size-p1 description_padding-none">{{ item['NAME'] }}</div>
+                        <div class="icon-block icon-block_theme-white icon-block_size-m"></div>
+                    </div>  
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

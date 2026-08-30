@@ -1,0 +1,14 @@
+.videomodal.active{
+	display: block;
+}
+.videomodal .modal_container{
+	max-width: 800px;
+	max-height: 80vh;
+}
+.videomodal video{
+	width:100%;
+	border-radius:30px;
+}
+.mediaitemvideo{
+	cursor: pointer;
+}

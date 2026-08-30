@@ -1,0 +1,103 @@
+{{ include_component("investportal:main.block", "detailnews", {
+    'IS_EMPTY': true
+}) }}
+
+<section class="section section_padding-m">
+    <div class="wrapper wrapper_mode-s">
+        <h1 class="headline headline_size-h1">
+            {{ arResult['ITEM']['NAME'] }}
+        </h1>
+        <span class="news-item__date news-item__date-icon description_size-p1">
+            {{ arResult['ITEM']['ACTIVE_FROM']|split(' ')|first }}
+    </span>
+    </div>
+</section>
+
+<section class="section section_padding-s section_padding-top-none">
+    <div class="wrapper wrapper_mode-l">
+        <div class="news-page__image image-container image-container_bg full-image"
+             style="background-image: url({{ get_src_by_id(arResult['ITEM']['PREVIEW_PICTURE']) }})"></div>
+    </div>
+</section>
+
+<section class="section section_padding-s section_padding-top-none">
+    <div class="wrapper wrapper_mode-s">
+        <div class="description description_size-p1 description_padding-bottom-none">
+            {{ arResult['ITEM']['DETAIL_TEXT'] | raw}}
+        </div>
+    </div>
+</section>
+
+{# <section class="section section_padding-s section_padding-top-none">
+    <div class="wrapper wrapper_mode-s news-page__contacts">
+        <div class="card card__item_column card_size-m card_theme-white">
+            <p class="description strong description_size-p1 description_padding-none">
+                Подать заявку, проверить свой бизнес на соответствие условиям получения гарантийной поддержки, узнать подробнее о льготных программах можно в Гарантийном фонде в Тюмени:
+            </p>
+            <div class="description description_size-p1 description_padding-bottom-none description_padding-top-xl">
+                ул.Хохрякова, д.53
+                <br/>
+                +7 (3452) 50-77-23
+                <br/>
+                <a type="mail" href="mailto:pokaluhina@obl72.ru">pokaluhina@obl72.ru</a>
+            </div>
+        </div>
+
+        <a class="button button_size-s button_theme-black" href="/press-center/">Вернуться ко всем новостям</a>
+    </div>
+</section> #}
+
+<section class="section section_padding-s section_padding-top-none">
+    <div class="wrapper wrapper_mode-s news-page__contacts">
+        <div class="card card__item_column card_size-m card_theme-white">
+            {# {% if arResult['ITEM']['TEXT_QUOTE']['PROPERTY_VALUE'] is not empty %}
+                <p class="description strong description_size-p1 description_padding-none">
+                    {{arResult['ITEM']['TEXT_QUOTE']['PROPERTY_VALUE']}}
+                </p>
+            {% endif %} #}
+            <p class="description strong description_size-p1 description_padding-none">
+                По вопросам реализации инвестиционных проектов можно обратиться в Инвестиционное агентство Тюменской области:
+            </p>
+            {% if arResult['ITEM']['CONTACT_ADDRESS']['PROPERTY_VALUE'] is not empty or arResult['ITEM']['CONTACT_PHONE']['PROPERTY_VALUE'] is not empty or arResult['ITEM']['CONTACT_EMAIL']['PROPERTY_VALUE'] is not empty %}
+                <div class="description description_padding-top-xl description_size-p1 description_padding-bottom-none ">
+                    {% if arResult['ITEM']['CONTACT_ADDRESS']['PROPERTY_VALUE'] is not empty %}
+                        {{arResult['ITEM']['CONTACT_ADDRESS']['PROPERTY_VALUE']}}
+                        <br>
+                    {% endif %}
+                    {% if arResult['ITEM']['CONTACT_PHONE']['PROPERTY_VALUE'] is not empty %}
+                        {{arResult['ITEM']['CONTACT_PHONE']['PROPERTY_VALUE']}}
+                        <br>
+                    {% endif %}
+                    {% if arResult['ITEM']['CONTACT_EMAIL']['PROPERTY_VALUE'] is not empty %}
+                        <a type="mail" href="mailto:{{arResult['ITEM']['CONTACT_EMAIL']['PROPERTY_VALUE']}}">{{arResult['ITEM']['CONTACT_EMAIL']['PROPERTY_VALUE']}}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+        <a class="button button_size-s button_theme-black" href="/press-center/">Вернуться ко всем новостям</a>
+    </div>
+</section>
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="news-wrapper">
+            <div class="news-wrapper__header">
+                <div class="headline headline_size-h2 headline_padding-none">Будет интересно</div>
+
+                <a class="button button_size-s button_theme-transparent" href="/press-center/">Читать все новости</a>
+            </div>
+
+            <div class="news">
+                {{ include_component("investportal:sr.random_section", "randomnews", {
+                    'ELEMENT_CODE': arResult['current']['code'],
+                    'IBLOCK_TYPE': 'content',
+                    'IBLOCK': 'news',
+                    'ELEMENT_COUNT': 3
+                }) }}
+            </div>
+
+            <div class="button-mobile"><a class="button button_size-s button_theme-transparent" href="/press-center/">Читать все новости</a></div>
+        </div>
+    </div>
+</section>

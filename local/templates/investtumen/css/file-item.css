@@ -1,0 +1,57 @@
+.file-item {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-item.show {
+    display: flex;
+}
+
+.file-item__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.file-item__title-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--bg-radial-svg);
+    border-radius: var(--border-medium);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.file-item__title-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.file-item__title-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: var(--padding-ml);
+    color: var(--color-black-60)
+}
+
+.file-item__title-text p:first-child {
+    color: var(--color-basic)
+}
+
+.file-item__buttons button {
+    border: unset;
+    padding: 0;
+    cursor: pointer;
+}
+
+.file-item__buttons button > svg {
+    width: 24px;
+    height: 24px;
+}

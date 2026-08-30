@@ -1,0 +1,130 @@
+{{ include_component("investportal:main.intro", "investor", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+
+{{ include_component(
+    "investportal:achievements",
+    ".default",
+    {
+        "IBLOCK_CODE": 'achievements',
+        "IBLOCK_TYPE": "content",
+        "ELEMENT_CODE": 'upperachievements',
+        "PROPERTY_CODE": [],
+        "SECTION_CODE": arParams['CODE'],
+    }
+) }}
+
+{{ include_component(
+    "investportal:achievements",
+    ".default",
+    {
+        "IBLOCK_CODE": 'achievements',
+        "IBLOCK_TYPE": "content",
+        "ELEMENT_CODE": 'bottomachievements',
+        "PROPERTY_CODE": [],
+        "SECTION_CODE": arParams['CODE'],
+    }
+) }}
+
+{{ include_component("investportal:main.block", "twocardstatic", {
+    'IS_EMPTY': true
+}) }}
+
+{{ include_component("investportal:main.block", "listparts", {
+    'IBLOCK': 'internationalcooperation',
+    'IBLOCK_TYPE': 'pforinvestor',
+    'FILTER': true
+}) }}
+
+{{ include_component("investportal:main.block", "interregionalcooperation", {
+    'IBLOCK': 'interregionalcooperation',
+    'IBLOCK_TYPE': 'pforinvestor',
+    'FILTER': true
+}) }}
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+
+        <h2 class="headline headline_size-h2">Побратимские связи</h2>
+
+        <div class="twin-relations__block">
+
+            <div class="description description_size-p1 description_padding-bottom-none">
+                Развитию международных связей городов и районов Тюменской области оказывается особое внимание. Работа в этом направлении способствует взаимовыгодному торгово-экономическому, научно-техническому, социальному и культурному сотрудничеству, укреплению экономического потенциала Тюменской области, является неотъемлемой частью единого внешнеполитического курса Российской Федерации.
+                <br/><br/>
+                В Тюменской области в целях активизации сотрудничества на уровне муниципальных образований заключено 13 соглашений.
+            </div>
+
+            <div class="link-cards">
+
+                <div class="link-cards__item">
+                    <a href="/" class="link-cards__link link-cards__link-column">
+                        <div class="link-cards__headline">
+                            <p class="description strong description_size-p1 description_padding-none">
+                                Информация о побратимских связях городов Тюменской области
+                            </p>
+                            <!-- TODO: Добавить скачивание документа -->
+                            <button class="button button_theme-white button_size-s">
+                                <div class="button__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.7501 13.1893L15.9394 10C16.2323 9.70712 16.7071 9.70712 17 10C17.2929 10.2929 17.2929 10.7678 17 11.0607L12.5304 15.5303C12.3897 15.671 12.199 15.75 12.0001 15.75C11.8011 15.75 11.6104 15.671 11.4697 15.5303L7.00006 11.0606C6.70717 10.7678 6.70717 10.2929 7.00006 9.99998C7.29296 9.70708 7.76783 9.70708 8.06072 9.99998L11.2501 13.1893V2.75C11.2501 2.72411 11.2514 2.69853 11.2539 2.67332C11.2923 2.29513 11.6117 2 12.0001 2C12.4143 2 12.7501 2.33579 12.7501 2.75V13.1893Z" fill="#252830"/>
+                                        <path d="M4.75 14.7503C4.75 14.336 4.41421 14.0003 4 14.0003C3.58578 14.0003 3.25 14.336 3.25 14.7503V19.0002C3.25 19.9667 4.0335 20.7502 5 20.7502H19C19.9665 20.7502 20.75 19.9667 20.75 19.0002V14.7503C20.75 14.336 20.4142 14.0003 20 14.0003C19.5858 14.0003 19.25 14.336 19.25 14.7503V19.0002C19.25 19.1383 19.138 19.2502 19 19.2502H5C4.86193 19.2502 4.75 19.1383 4.75 19.0002V14.7503Z" fill="#252830"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="document-info description_padding-top-xs description_c-black-60 description_size-p3">
+                            <span>.pdf</span>
+                            <span>4 Кб</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="link-cards__item">
+                    <a href="/" class="link-cards__link link-cards__link-column">
+                        <div class="link-cards__headline">
+                            <p class="description strong description_size-p1 description_padding-none">
+                                Реестр соглашений о международном сотрудничестве муниципальных образований Тюменской области
+                            </p>
+                            <!-- TODO: Добавить скачивание документа -->
+                            <button class="button button_theme-white button_size-s">
+                                <div class="button__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.7501 13.1893L15.9394 10C16.2323 9.70712 16.7071 9.70712 17 10C17.2929 10.2929 17.2929 10.7678 17 11.0607L12.5304 15.5303C12.3897 15.671 12.199 15.75 12.0001 15.75C11.8011 15.75 11.6104 15.671 11.4697 15.5303L7.00006 11.0606C6.70717 10.7678 6.70717 10.2929 7.00006 9.99998C7.29296 9.70708 7.76783 9.70708 8.06072 9.99998L11.2501 13.1893V2.75C11.2501 2.72411 11.2514 2.69853 11.2539 2.67332C11.2923 2.29513 11.6117 2 12.0001 2C12.4143 2 12.7501 2.33579 12.7501 2.75V13.1893Z" fill="#252830"/>
+                                        <path d="M4.75 14.7503C4.75 14.336 4.41421 14.0003 4 14.0003C3.58578 14.0003 3.25 14.336 3.25 14.7503V19.0002C3.25 19.9667 4.0335 20.7502 5 20.7502H19C19.9665 20.7502 20.75 19.9667 20.75 19.0002V14.7503C20.75 14.336 20.4142 14.0003 20 14.0003C19.5858 14.0003 19.25 14.336 19.25 14.7503V19.0002C19.25 19.1383 19.138 19.2502 19 19.2502H5C4.86193 19.2502 4.75 19.1383 4.75 19.0002V14.7503Z" fill="#252830"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="document-info description_padding-top-xs description_c-black-60 description_size-p3">
+                            <span>.pdf</span>
+                            <span>4 Кб</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ include_component("investportal:main.block", "cooperationproposal", {
+    'IBLOCK': 'cooperationproposal',
+    'IBLOCK_TYPE': 'pforinvestor',
+    'FILTER': true
+}) }}
+
+{{ include_component("investportal:main.block", "helpful-information", {
+    'IBLOCK': 'files',
+    'IBLOCK_TYPE': 'content',
+    "SECTION": arParams['CODE'],
+}) }}
+
+{{ include_component("investportal:main.block", "eventscalendar", {
+    'IBLOCK': 'eventscalendar',
+    'IBLOCK_TYPE': 'content',
+    "SECTION": arParams['CODE'],
+    'FILTER': true
+}) }}

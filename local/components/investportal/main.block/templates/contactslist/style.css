@@ -1,0 +1,14 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+@import url("/local/templates/investtumen/css/button.css");
+
+.contactlist_modal.modal-wrapper .modal-wrapper__body{
+    height: 100vh;
+    padding-bottom: 24px;
+}
+
+.contact-item_size-s .contact-item__image {
+    width: 80px;
+    height: 80px;
+}

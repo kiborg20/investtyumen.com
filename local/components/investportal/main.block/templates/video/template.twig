@@ -1,0 +1,39 @@
+<section id="roads" class="section section_padding-xl">
+    <div data-video-zoom class="wrapper wrapper_mode-l">
+        <div class="video-frame__container">
+
+            <button data-video-zoom-button type="button"
+                    class="video-frame__button button button_size-m button_theme-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.00014 20.7268C6.66699 21.5026 5 20.5337 5 18.983V5.01698C5 3.46634 6.66699 2.4974 8.00013 3.27315L20.0007 10.2562C21.3331 11.0315 21.3331 12.9685 20.0007 13.7438L8.00014 20.7268Z"
+                            fill="#4A66F5"/>
+                </svg>
+            </button>
+            <img alt="play video" src="{{ arResult['HEADER']['PREVIEW_PICTURE'] is empty ? '/statics/video-preview.jpg' : get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE']) }}"/>
+        </div>
+
+        <div data-video-zoom-popup class="fixed-overlay popup__zoom-overlay modal-wrapper">
+            <button data-video-zoom-close type="button" class="popup__zoom-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.35529 5.23359C6.04525 4.92217 5.54264 4.9221 5.23253 5.23359C4.92249 5.54499 4.92249 6.04991 5.23253 6.36132L10.8783 12.0321L5.29651 17.6387C4.98646 17.9501 4.98646 18.455 5.29651 18.7664C5.60655 19.0779 6.10923 19.0779 6.41927 18.7664L12.0011 13.1599L17.5829 18.7664C17.893 19.0778 18.3957 19.0778 18.7057 18.7664C19.0158 18.455 19.0157 17.9501 18.7057 17.6387L13.1239 12.0321L18.7697 6.36133C19.0797 6.04992 19.0797 5.545 18.7697 5.23359C18.4596 4.92217 17.957 4.92218 17.6469 5.23359L12.0011 10.9044L6.35529 5.23359Z"
+                            fill="#252830"/>
+                </svg>
+            </button>
+
+            <div class="popup__zoom">
+                <div class="popup__zoom-container">
+
+                    <iframe src="{{ arResult['HEADER']['PREVIEW_TEXT'] }}"
+                            frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

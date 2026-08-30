@@ -1,0 +1,17 @@
+{{ include_component("investportal:main.intro", "sucess-stories", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'intro',
+    'IBLOCK_TYPE': 'pforinvestor'
+}) }}
+
+{{ include_component("investportal:main.block", "list_tax_benefits", {
+    'IBLOCK': 'nalogovyelgoty',
+    'IBLOCK_TYPE': 'pforinvestor',
+    'FILTER': true
+}) }}
+
+{{ include_component("investportal:main.block", "ask", {
+    'SECTION': arParams['CODE'],
+    'IBLOCK': 'ask',
+    'IBLOCK_TYPE': 'content'
+}) }}

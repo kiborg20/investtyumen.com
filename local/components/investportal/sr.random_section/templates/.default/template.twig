@@ -1,0 +1,35 @@
+<section id="other" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="headline headline_size-h2">Другие сферы</div>
+
+        <div class="card-items card-items_nowrap">
+
+            {% for item in arResult['ITEMS'] %}
+            <a href="/growth-area/{{ item['CODE'] }}/" class="card-items__item card-items__item_hovered">
+                <div class="card-header">
+                    <div class="icon-block">
+                        <?=$aItem['ICON']?>
+                    </div>
+
+                    <div class="more-link">
+                        <span>Подробнее</span>
+                        <span class="more-link__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="headline headline_size-h5"><p>{{ item['NAME'] | raw }}</p></div>
+
+                    <div class="description description_size-p2 description_padding-bottom-none description_padding-top-s">
+                        <?=empty($aItem['DESCRIPTION']) ? '' : $aItem['DESCRIPTION']?>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

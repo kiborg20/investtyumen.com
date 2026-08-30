@@ -1,0 +1,123 @@
+{% if arResult['HEADER']['slides'] is empty %}
+<section id="{{ arResult['HEADER']['taghref']['PROPERTY_VALUE']}}" class="section section_padding-xl section_padding-bottom-none">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card {{arResult['HEADER']['PREVIEW_PICTURE'] is empty ? 'card_theme-white' : 'card_theme-image'}}">
+            {% if arResult['HEADER']['PREVIEW_PICTURE'] is empty %}
+                <div class="card__item card__item_between">
+                        <div class="row">
+                            {% if arResult['HEADER']['tag']['PROPERTY_VALUE']|length %}
+                            <div class="label"><p>{{ arResult['HEADER']['tag']['PROPERTY_VALUE'] }}</p></div>
+                            {% endif %}
+
+                            <div class="headline headline_size-h2"><p>{{ arResult['HEADER']['blockheader']['PROPERTY_VALUE'] }}</p></div>
+
+                            <div class="description description_size-p1">
+                                <p>{{arResult['HEADER']['PREVIEW_TEXT']}}</p></div>
+                        </div>
+                </div>
+            {% else %}
+                <div class="card__item card__item-theme-image" style="background-image:
+                        url({{ get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE']) }})">
+
+                </div>
+            {% endif %}
+
+            <div class="card__item {{arResult['HEADER']['DETAIL_PICTURE'] is empty ? 'card__item_between' : 'card__item-theme-image'}}">
+                {% if arResult['HEADER']['DETAIL_PICTURE'] is not empty %}
+                <div class="image-container image-container_bg person-image" style="background-image: url({{get_src_by_id(arResult['HEADER']['DETAIL_PICTURE'])}});"></div>
+                {% else %}
+                    <div class="row">
+                        <div class="label">Отдых</div>
+
+                        <div class="headline headline_size-h2">{{ arResult['HEADER']['cardheader']['PROPERTY_VALUE'] }}</div>
+
+                        <div class="description description_size-p1 description_padding-xs description_padding-top-none">
+                            {{ arResult['HEADER']['DETAIL_TEXT'] }}
+                        </div>
+                    </div>
+
+                    {% if arResult['HEADER']['refurl'] is not empty %}
+                        <div class="row">
+                            <a class="button button_size-m button_theme-blue" href="{{arResult['HEADER']['refurl']['PROPERTY_VALUE']}}">
+                                Перейти на сайт Visit Tyumen
+                            </a>
+                        </div>
+                    {% endif %}
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if arResult['HEADER']['slides'] is not empty %}
+    <section id="{{ arResult['HEADER']['taghref']['PROPERTY_VALUE']}}" class="section section_padding-xl section_padding-bottom-none">
+        <div class="card-slider wrapper wrapper_mode-l" data-card-slider>
+            <div class="card card_theme-white card-slider__item" data-card-slider-item>
+                <div class="card__item card__item-xs card__item_between">
+                    <div class="row">
+                        {% if arResult['HEADER']['tag']['PROPERTY_VALUE']|length %}
+                            <div class="label"><p>{{ arResult['HEADER']['tag']['PROPERTY_VALUE'] }}</p></div>
+                        {% endif %}
+
+                        <div class="headline headline_size-h2"><p>{{ arResult['HEADER']['blockheader']['PROPERTY_VALUE'] }}</p></div>
+
+                        <div class="description description_size-p1">
+                            <p>{{arResult['HEADER']['PREVIEW_TEXT']}}</p>
+                        </div>
+                    </div>
+                    <button type="button" class="button button_theme-blue button_size-m">Читать все истории</button>
+                </div>
+
+                <div class="card__item">
+                    <div class="image-container image-container_bg person-image" style="background-image: url({{ get_src_by_id(arResult['HEADER']['DETAIL_PICTURE']) }});"></div>
+                </div>
+            </div>
+
+
+            {% for slide in arResult['HEADER']['slides'] %}
+                <div class="card card_theme-white card-slider__item" data-card-slider-item>
+                    <div class="card__item card__item-xs card__item_between">
+                        <div class="row">
+                            {% if arResult['HEADER']['tag']['PROPERTY_VALUE']|length %}
+                                <div class="label"><p>{{ arResult['HEADER']['tag']['PROPERTY_VALUE'] }}</p></div>
+                            {% endif %}
+
+                            <div class="headline headline_size-h2"><p>{{ slide['PROPERTY_VALUE']['NAME'] }}</p></div>
+
+                            <div class="description description_size-p1">
+                                <p>{{ slide['PROPERTY_VALUE']['PREVIEW_TEXT'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card__item">
+                        <div class="image-container image-container_bg person-image"
+                             style="background-image: url({{ get_src_by_id(slide['PROPERTY_VALUE']['PREVIEW_PICTURE']) }});"></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="card-slider__slides">
+                {% for slide in arResult['HEADER']['slides'] %}
+                <div data-card-slider-slide></div>
+                {% endfor %}
+                <div data-card-slider-slide></div>
+            </div>
+
+            <div class="card-slider__buttons">
+                <div class="card-slider__nav card-slider__nav_prev" data-card-slider-button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                        <path fill="#252830" d="M14.005 8.062 10.065 12l3.94 3.94a.75.75 0 0 1-1.06 1.06l-4.47-4.47a.75.75 0 0 1 0-1.06L12.945 7a.75.75 0 0 1 1.06 1.06Z"/>
+                    </svg>
+                </div>
+                <div class="card-slider__nav card-slider__nav_next" data-card-slider-button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                        <path fill="#252830" d="m10.01 15.94 3.939-3.939-3.94-3.94a.75.75 0 0 1 1.061-1.06l4.47 4.47a.75.75 0 0 1 0 1.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

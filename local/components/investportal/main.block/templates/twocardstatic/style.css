@@ -1,0 +1,164 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/link-card.css");
+
+.table {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.table__row {
+    display: flex;
+    width: 100%;
+    padding: var(--padding-xl) 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--color-black-40);
+}
+
+.table__row:last-child {
+    border-bottom: none;
+}
+
+.grid {
+    display: grid;
+    grid-auto-flow: row;
+    box-sizing: border-box;
+}
+
+.grid__row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    border-bottom: 1px solid var(--color-black-40);
+}
+
+.grid__row.grid__header {
+    font-weight: 500;
+}
+
+.grid__cell {
+    padding: var(--padding-xl);
+}
+
+.events-grid {
+    overflow-x: auto;
+    padding-top: var(--padding-xl);
+}
+
+.events-grid .grid__row {
+    grid-template-columns: 0.5fr 3fr 1fr;
+}
+
+.events-grid .grid__cell {
+    padding: var(--padding-l);
+}
+
+.events-grid .grid__cell .button {
+    height: auto;
+    padding: 0;
+}
+
+.regions-grid {
+    margin-top: 60px;
+    overflow-x: auto;
+}
+
+.regions-grid .grid__row {
+    grid-template-columns: 1fr 3.5fr 0.5fr 1fr;
+    min-width: 720px;
+}
+
+.regions-grid .document-name__cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.regions-grid .document-name__cell button {
+    margin-left: var(--padding-xl);
+    padding: var(--padding-small);
+}
+
+.regions-grid__button-more {
+    width: 100%;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.twin-relations__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+}
+
+.twin-relations__block > div {
+    width: calc(100% / 2 - calc(var(--padding-ml)*2));
+    flex-grow: inherit;
+    flex-shrink: 0;
+    flex-basis: calc(100% / 2 - calc(var(--padding-ml)*2));
+}
+
+.twin-relations__block .link-cards {
+    flex-direction: column;
+    flex-flow: wrap;
+}
+
+.twin-relations__block .link-cards__item {
+    width: 100%;
+    flex-basis: 100%;
+    min-height: 92px;
+}
+
+@media (max-width: 1023px) {
+    .twin-relations__block {
+        flex-direction: column;
+    }
+
+    .twin-relations__block > div {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .twin-relations__block > div:first-child {
+        margin-bottom: var(--padding-xxl);
+    }
+}
+
+@media (max-width: 767px) {
+    .regions-grid .grid__row {
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+    }
+
+    .events-grid .grid__row {
+        grid-template-columns: 0.5fr 1.5fr 1fr;
+    }
+}
+
+.filter-panel.button-group{
+    margin-top: 40px;
+}  
+
+.international_cards .link-cards__item {
+    min-height: 88px;
+    max-height: 88px;
+}
+
+.international_cards .link-cards__link .link-cards__link {
+    padding: 24px;
+}
+
+.international_cards .link-cards__link .description {
+    align-items: center;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+.international_cards .link-cards__link svg {
+    width: 40px;
+    height: 40px;
+}

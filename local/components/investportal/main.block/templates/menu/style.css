@@ -1,0 +1,37 @@
+@import url("/local/templates/investtumen/css/page-menu.css");
+
+.image-container__form-wrapper {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    padding: 28px;
+    background: var(--background-white);
+    border-radius: var(--border-large);
+    z-index: 150;
+}
+@media (max-width: 1023px) {
+    .image-container__form-wrapper {
+        top: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 24px;
+    }
+}
+@media (max-width: 1023px) {
+    .image-container__form-wrapper {
+        top: initial;
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+        padding: 16px;
+    }
+}
+.image-container__form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.image-container__form-body {
+    margin-bottom: 16px;
+}

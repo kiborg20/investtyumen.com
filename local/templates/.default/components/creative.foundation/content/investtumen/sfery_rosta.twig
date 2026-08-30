@@ -1,0 +1,148 @@
+<section class="section">
+    <div class="wrapper wrapper_mode-l">
+        <div class="breadscrumbs">
+            <div class="breadscrumbs__button">
+                <a onclick="history.back()" href="#">
+                    <span class="button button_theme-transparent button_size-s button_padding-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="M13.651 7.707a.25.25 0 1 0-.354-.354l-4.469 4.47a.25.25 0 0 0 0 .354l4.823-4.47Zm0 0-3.939 3.94-.354.353m4.293-4.293L9.358 12m0 0 .354.354M9.358 12l.354.354m0 0 3.94 3.939m-3.94-3.94 3.94 3.94m0 0a.25.25 0 0 1 0 .354v-.354Zm-.354.354-4.47-4.47 4.823 4.47a.25.25 0 0 1-.353 0Z"/></svg></span>
+                    Назад
+                </a>
+            </div>
+            {{ include_component('bitrix:breadcrumb', '', {
+                'START_FROM': 2,
+            }) }}
+        </div>
+    </div>
+</section>
+
+{{ include_component("investportal:main.intro", "", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK': 'sfery-rosta-intro',
+}) }}
+
+{{ include_component("investportal:main.block", "menu", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'sfery-rosta-menu',
+}) }}
+
+{{ include_component(
+    "investportal:achievements",
+    ".default",
+    {
+        "IBLOCK_CODE": 'achievements',
+        "IBLOCK_TYPE": "content",
+        "ELEMENT_CODE": ['raw-oil','natural-associated-gas'],
+        "PROPERTY_CODE": [],
+        "SECTION_CODE": arResult['current']['code'],
+    }
+) }}
+
+{{ include_component("investportal:main.full_props", "sr_goal", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'goals',
+}) }}
+
+{{ include_component("investportal:main.full_props", "sr_factors", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'competitiveness-factors',
+    'ELEMENT_COUNT': 3
+}) }}
+
+{{ include_component("investportal:main.block", "two_cards_sr", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'sr_two_block',
+}) }}
+
+{{ include_component("investportal:main.list", "institutions", {
+    'IBLOCK': 'sfery-rosta-institutions',
+    'IBLOCK_TYPE': 'sferyrosta',
+}) }}
+
+{{ include_component("investportal:main.full_props", "sr_lists", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'sr_list_block',
+}) }}
+
+
+{{ include_component("investportal:main.full_props", "sr_number_section", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK_TYPE': 'sferyrosta',
+    'IBLOCK': 'sr_numbers_block',
+}) }}
+
+
+
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="headline headline_size-h2">Инвестиционные кейсы</div>
+
+        <div class="tabs">
+            <div class="tabs__item">
+                <a data-tab="1"  class="button button_theme-blue" href="#">Реализованные</a>
+                <a data-tab="2"  class="button button_theme-transparent" href="#">В процессе</a>
+                <a data-tab="4"  class="button button_theme-transparent" href="#">Готовые к инвестированию</a>
+            </div>
+
+            <div class="tabs__item">
+                <a class="button button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все кейсы</a>
+            </div>
+        </div>
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "COMPONENT_TEMPLATE": "homepage",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 1
+        }) }}
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "COMPONENT_TEMPLATE": "homepage",
+            "HEROTITLE": "Заголовок",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 2
+        }) }}
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "COMPONENT_TEMPLATE": "homepage",
+            "HEROTITLE": "Заголовок",
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 3
+        }) }}
+
+        {{ include_component("investportal:prtab", "homepage", {
+            "IBLOCK_ID": "15",
+            "IBLOCK_TYPE": "content",
+            "PROPERTY_CODE": "IT_IP_HOME",
+            "ITEMS_COUNT": 3,
+            "SECTION_ID": 4
+        }) }}
+
+        <div class="button-mobile"><a class="button button_theme-transparent" href="/investor/ofis-soprovozhdenia-investora/investment-projects/">Смотреть все кейсы</a></div>
+    </div>
+</section>
+
+{{ include_component("investportal:sr.random_section", "", {
+    'SECTION': 'growth-area',
+    'ELEMENT_CODE': arResult['current']['code'],
+    'IBLOCK_TYPE': 'content',
+    'IBLOCK': 'structure',
+    'ELEMENT_COUNT': 3
+}) }}
+
+{{ include_component("investportal:main.block", "ask", {
+    'SECTION': arResult['current']['code'],
+    'IBLOCK': 'ask',
+    'IBLOCK_TYPE': 'content'
+}) }}

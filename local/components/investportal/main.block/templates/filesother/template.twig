@@ -1,0 +1,19 @@
+<section class="seaction section_padding-s">
+    <div class="wrapper wrapper_mode-l">
+        {% if arResult['HEADER']['PREVIEW_TEXT'] is not empty %}
+            <div class="headline headline_size-h2">Подробная информация об инвестиционных турах</div>
+        {% endif %}
+        <div class="link-cards">
+            {% for file in arResult['HEADER']['files'] %}
+                <div class="link-cards__item">
+                    <a class="link-cards__link link-cards__link-column" href="{{ get_src_by_id(file['PROPERTY_VALUE']) }}">
+                    <div class="link-cards__content">
+                        <div class="description description_size-p1 description_padding-none">{{ file['PROPERTY_DESCRIPTION'] }}</div>
+                        <div class="icon-block icon-block_theme-white icon-block_size-m"></div>
+                    </div>    
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

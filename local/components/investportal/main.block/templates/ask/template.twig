@@ -1,0 +1,62 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="got-question">
+            <div class="got-question__left">
+                <p class="headline headline_size-h2">{{ arResult['HEADER']['NAME'] }}</p>
+
+                <p class="description description_size-p1 description_padding-top-none">{{ arResult['HEADER']['PREVIEW_TEXT'] }}</p>
+
+                <p class="got-question-buttons">
+                    {%  if (arResult['HEADER']['file']) is not empty %}
+                        <a class="button button_theme-blue button_size-m" href="{{ get_src_by_id(arResult['HEADER']['file']['PROPERTY_VALUE']) }}">
+                            <span class="button__icon button__icon_left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                    <path fill="currentColor" d="M12.75 13.19 15.94 10A.75.75 0 1 1 17 11.06l-4.47 4.47a.75.75 0 0 1-1.06 0L7 11.06A.75.75 0 1 1 8.06 10l3.19 3.19V2.75a.75.75 0 1 1 1.5 0v10.44Z"/>
+                                    <path fill="currentColor" d="M4.75 14.75a.75.75 0 1 0-1.5 0V19c0 .967.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-4.25a.75.75 0 1 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25v-4.25Z"/>
+                                </svg></span>
+                            <span>Скачать презентацию</span>
+                        </a>
+                    {% endif %}
+                    {% if (arResult['HEADER']['ref'] is not empty) %}
+                        <a class="button button_theme-white button_size-m" href="{{ arResult['HEADER']['ref']['PROPERTY_VALUE'] }}">
+                            <span>{{ arResult['HEADER']['reftext']['PROPERTY_VALUE'] }}</span>
+                            <span class="button__icon button__icon_right">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.86564 2.38672H12.555L0.930607 14.0111C0.819097 14.1226 0.750037 14.2605 0.723437 14.4047C0.715107 14.4498 0.710938 14.4956 0.710938 14.5414C0.710938 14.7333 0.784157 14.9253 0.930607 15.0717C0.967217 15.1083 1.00668 15.1404 1.04826 15.1678C1.33938 15.3601 1.73499 15.328 1.99127 15.0717L13.6157 3.44738V12.1367C13.6157 12.5509 13.9515 12.8867 14.3657 12.8867C14.7799 12.8867 15.1157 12.5509 15.1157 12.1367V1.63672C15.1157 1.2225 14.7799 0.886719 14.3657 0.886719H3.86564C3.45143 0.886719 3.11564 1.2225 3.11564 1.63672C3.11564 2.05093 3.45143 2.38672 3.86564 2.38672Z" fill="currentColor"/>
+                                </svg>
+                            </span>
+                        </a>
+                    {% endif %}
+                    {% if (arResult['HEADER']['consultbuttontext'] is not empty) %}
+                        <a data-open-modal="consult" class="button button_theme-blue button_size-m" href="#">
+                            {{ arResult['HEADER']['consultbuttontext']['PROPERTY_VALUE'] }}
+                        </a>
+                    {% endif %}
+                </p>
+            </div>
+            {% if (arResult['HEADER']['DETAIL_TEXT'] is not empty) %}
+                <div class="got-question__right">
+                    <div class="contact-item">
+                        <div class="contact-item__image" style="background-image: url({{ get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE']) }})"></div>
+                        <div class="contact-item__info">
+                            <div>
+                                <div class="headline headline_size-h5">{{arResult['HEADER']['DETAIL_TEXT']}}</div>
+
+                                <div class="description description_size-p2 description_padding-top-xs description_padding-bottom-none description_c-black-60">
+                                    {{ arResult['HEADER']['vacancy']['PROPERTY_VALUE'] }}</div>
+                            </div>
+                            <div class="description description_size-p2 description_padding-xs description_padding-none">
+                                <p><a href="mailto:{{arResult['HEADER']['mail']['PROPERTY_VALUE']}}">{{arResult['HEADER']['mail']['PROPERTY_VALUE']}}</a></p>
+
+                                <p>{{ arResult['HEADER']['phone']['PROPERTY_VALUE'] }}</p>
+                            </div>
+                            <button data-open-modal="ask-question" type="button" class="button button_theme-transparent">
+                                Задать вопрос
+                            </button>                            
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

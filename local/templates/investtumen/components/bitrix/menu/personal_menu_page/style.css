@@ -1,0 +1,150 @@
+.page_menue_wrapper {
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.personal_page_menue .slider_arrow_left{
+	left: 0;
+}
+
+.personal_page_menue .slider_arrow_right{
+	right: 0;
+}
+
+.page_menue_slide a {
+	border-radius: 10px;
+	border: 1px solid #000b34;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding:  10px 15px;
+	margin: 0;
+	text-decoration: none;
+	color: #000b34;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	transition: all 0.4s linear;
+}
+
+.page_menue_slide a.selected {
+	background-color: #4166FF;
+	border-color: #4166FF;
+	color:#fff;
+}
+
+.page_menue_slide a:hover {
+	background-color: #4166FF;
+	border-color: #4166FF;
+	color:#fff;
+	transition: all 0.4s linear;
+}
+
+
+
+.personal_page_menue.slick-initialized.slick-slider {
+	padding: 0 60px;
+	display: flex;
+	align-items: center;
+}
+
+.personal_page_menue .slick-slide {
+	display: flex;
+	padding: 0 10px;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.personal_page_menue .slick-slide div{
+	width: 100%;
+	height: 100%;
+}
+
+.personal_page_menue .slick-slide div {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.personal_page_menue .slick-track {
+	display: flex;
+	align-items: stretch;
+}
+
+.personal_page_menue .slick-track, .slick-slider .slick-list {
+	display: flex;
+}
+
+.profile_new {
+	margin-top: 20px !important;
+}
+
+.profile_page {
+	margin-top: 100px !important;
+}
+
+.page_menue_wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	background: #fff;
+	z-index: 100;
+	top: 101px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.profile_page_header {
+	margin-top: 150px;
+}
+
+.menue_fixed {
+	width: 1200px;
+	max-width: 1200px;
+	margin: 0 auto;
+	background: #fff;
+}
+
+
+@media(max-width:1200px){
+	.menue_fixed {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 10px;
+	}
+}
+
+
+
+
+@media(max-width: 992px){
+	.page_menue_slide a {
+		padding: 7px 10px;
+		font-size: 10px;
+	}
+	.personal_page_menue .slider_arrow{
+		display: block !important;
+	}
+
+	.personal_page_menue .slider_arrow img {
+		height: 50%;
+		width: 50%;
+	}
+}
+
+
+@media(max-width: 768px){
+	.page_menue_wrapper {
+		top: 50px;
+	}
+	.profile_page_header {
+		margin-top: 35px;
+	}
+
+}

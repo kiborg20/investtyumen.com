@@ -1,0 +1,35 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+
+.land-card__buttons {
+    padding-bottom: var(--padding-xl);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.land-card__buttons button {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.land-card__buttons button:first-child {
+    margin-right: var(--padding-xl) ;
+}
+
+@media (max-width: 1023px) {
+    .land-card__buttons {
+        flex-direction: column;
+    }
+
+    .land-card__buttons button {
+        width: 100%;
+    }
+
+    .land-card__buttons button:first-child {
+        margin-right: 0;
+        margin-bottom: var(--padding-xl) ;
+    }
+
+}

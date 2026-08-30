@@ -1,0 +1,298 @@
+.checkselect {
+    position: relative;
+    display: inline-block;
+    min-width: 200px;
+    text-align: left;
+    width: 100%;
+}
+.checkselect-control {
+    position: relative;
+    padding: 0 !important;
+    width: 50%;
+    height: 1px;
+}
+.checkselect-control select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding-left: 5px;
+    height: 30px;
+    border: 1px solid #9C9C9C;
+    padding: 10px 25px;
+    /*height: 45px;*/
+    height: 1px;
+    opacity: 0;
+    border-radius: 8px;
+
+}
+.checkselect-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+/*.checkselect-popup {*/
+/*    display: block;*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    max-height: 250px;*/
+/*    position: absolute;*/
+/*    top: 100%;*/
+/*    left: 0px;*/
+/*    border: 1px solid #dadada;*/
+/*    border-top: none;*/
+/*    background: #fff;*/
+/*    z-index: 9999;*/
+/*    overflow: auto;*/
+/*    user-select: none;*/
+/*    box-shadow: 3px 3px 19px 0px #00000024;*/
+/*}*/
+
+.checkselect-popup {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: auto;
+    max-height: 200px;
+    position: relative;
+    top: 100%;
+    left: 0px;
+    border: 1px solid #dadada;
+    border-top: 1px solid #dadada;
+    background: #fff;
+    z-index: 0;
+    overflow: auto;
+    user-select: none;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+.checkselect label {
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 4px 6px 4px 25px;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.1;
+    cursor: pointer;
+    align-items: center;
+    padding: 10px 40px;
+}
+.checkselect-popup input {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    margin: 0 !important;
+    padding: 0;
+}
+.checkselect-popup label:hover {
+    background: #03a2ff;
+    color: #fff;
+}
+.checkselect-popup fieldset {
+    display: block;
+    margin:  0;
+    padding: 0;
+    border: none;
+}
+.checkselect-popup fieldset input {
+    left: 15px;
+}
+.checkselect-popup fieldset label {
+    padding-left: 32px;
+}
+.checkselect-popup legend {
+    display: block;
+    margin: 0;
+    padding: 5px 8px;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.1;
+}
+
+/**********************end multiple select******************************/
+
+
+.form_fieldset input[type=text], .form_fieldset input[type=number], textarea{
+    /*width: calc(100% - 50px);*/
+    width: 50%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 10px;
+    padding: 0 25px;
+    border: 1px solid #9C9C9C;
+    /*margin-bottom: 30px;*/
+    box-sizing: border-box;
+}
+
+.form_fieldset textarea {
+    min-height: 150px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+label.formlabel {
+    display: block;
+    margin-bottom: 15px;
+}
+
+form#infoblock_form {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.formsubmit.btn{
+    margin-top: 30px;
+}
+
+label.formlabel.required_field {
+    position: relative;
+}
+
+label.formlabel.required_field:after {
+    position: relative;
+    content:"*";
+    color: red;
+}
+
+.input__wrapper {
+    width: 50%;
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.inputfile {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.input__file-icon-wrapper {
+    height: 60px;
+    width: 60px;
+    margin-right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-left: 1px solid #fff;
+}
+
+.input__file-button-text {
+    line-height: 1;
+    margin-top: 1px;
+    margin-left: 25px;
+}
+
+.input__file-button {
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    background: #000b34;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: space-between;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0;
+    transition: all 0.4s linear;
+}
+
+.input__file-button:hover{
+    background: #4166FF;
+    transition: all 0.4s linear;
+}
+
+.form_fieldset {
+    margin-bottom: 30px;
+}
+
+.select2-container {
+    width: 50% !important;
+    height: 45px;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #9C9C9C !important;;
+    border-radius: 10px !important;;
+    height: 45px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 10px !important;
+    right: 10px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 42px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered{
+    padding-left: 25px !important;
+}
+
+.select2-container--default .select2-results__option--selectable {
+    font-size: 0.8em !important;
+}
+
+.documentbtn{
+    box-sizing: border-box;
+    border: 1px solid #000b34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 0;
+    text-decoration: none;
+    color: #000b34;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: all 0.4s linear;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.documentbtn:hover {
+    background-color: #4166FF;
+    border-color: #4166FF;
+    color: #fff;
+    transition: all 0.4s linear;
+}
+
+h2.docsheader {
+    margin-bottom: 20px;
+}
+
+.multipleSelectBox .select2-container{
+    width: 50% !important;
+    height: fit-content;
+
+}

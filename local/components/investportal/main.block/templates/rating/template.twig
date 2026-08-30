@@ -1,0 +1,59 @@
+<section id="{{ arResult['HEADER']['taghref']['PROPERTY_VALUE']}}" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            {% if (arResult['HEADER']['swap'] is empty) %}
+                <div class="card__item card__item_padding-none">
+                    {# TODO: if checked mask add into style option '--bg-mask', class 'image-mask' and html elements #}
+                    <div class="image-container image-container_bg full-image
+                            {{arResult['HEADER']['hasmask'] is not empty ? 'image-mask' : '' }}"
+
+                         style="{{arResult['HEADER']['hasmask'] is not empty ?
+                         "--bg-mask: url(" ~ get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE']) ~ ");" : ''}}
+                                 background-image: url({{ get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE'])}})">
+                        <div class="image-mask__top"></div>
+                        <div class="image-mask__bottom"></div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="card__item card__item_between card__item_border">
+                <div class="row">
+                    {% if arResult['HEADER']['tag']['PROPERTY_VALUE']|length %}
+                    <div class="label">{{ arResult['HEADER']['tag']['PROPERTY_VALUE'] }}</div>
+                    {% endif %}
+
+                    <div class="headline headline_size-h2">{{ arResult['HEADER']['NAME'] }}</div>
+
+                    <div class="description description_size-p1 description_padding-xs description_padding-top-none">{{ arResult['HEADER']['PREVIEW_TEXT'] }}</div>
+                </div>
+
+                <div class="card card_theme-transparent">
+                    <div class="card__item card__item_column">
+                        <div class="headline headline_size-h3 headline_padding-none headline_color-blue">{{ arResult['HEADER']['left_rating']['PROPERTY_VALUE'] }}</div>
+
+                        <div class="description description_size-p2 description_padding-none description_line-20">{{arResult['HEADER']['desc_left']['PROPERTY_VALUE']}}</div>
+                    </div>
+                    <div class="card__item card__item_column">
+                        <div class="headline headline_size-h3 headline_padding-none headline_color-blue"> {{arResult['HEADER']['right_rating']['PROPERTY_VALUE']}}</div>
+
+                        <div class="description description_size-p2 description_padding-none description_line-20">{{arResult['HEADER']['desc_right']['PROPERTY_VALUE']}}</div>
+                    </div>
+                </div>
+            </div>
+
+            {% if (arResult['HEADER']['swap'] is not empty) %}
+                <div class="card__item card__item_padding-none">
+                    <div class="image-container image-container_bg full-image
+                            {{arResult['HEADER']['hasmask'] is not empty ? 'image-mask' : '' }}"
+
+                          style="{{arResult['HEADER']['hasmask'] is not empty ?
+                          "--bg-mask: url(" ~ get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE']) ~ ");" : ''}}
+                                  background-image: url({{ get_src_by_id(arResult['HEADER']['PREVIEW_PICTURE'])}})">
+                        <div class="image-mask__top"></div>
+                        <div class="image-mask__bottom"></div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

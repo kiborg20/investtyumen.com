@@ -1,0 +1,49 @@
+<section class="section section_padding-m section_padding-top-none">
+    <div class="wrapper wrapper_mode-l">
+        <div class="main-slider">
+            <div class="swiper-wrapper">
+                {% for item in arResult.ITEMS %}
+                    <div class="swiper-slide main-slider__item">
+                        <div class="main-slider__wrapper">
+                            <div class="main-slider__image" style="background-image: url({{ item.PREVIEW_PICTURE.src }})"></div>
+                        </div>
+
+                        <div class="main-slider__card">
+                            <div class="main-slider__card-body">
+                                <div class="headline headline_size-h1 headline_between">
+                                    <span>{{ item.NAME }}</span>
+                                    {% if item.PROPERTY_IT_ICON_VALUE %}
+                                    <span class="icon-block">
+                                        <img alt="{{ item.NAME }}" src="{{ item.PROPERTY_IT_ICON_VALUE }}">
+                                    </span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="description description_size-p1 description_padding-top-xl ">
+                                    <p>
+                                        {{ item.PROPERTY_IT_NOMINATION_VALUE }} <br>{{ item.PROPERTY_IT_RAIT_VALUE }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="main-slider__card-footer">
+                                <div class="description description_size-p2 description_padding-none">{{ item.PROPERTY_IT_YEAR_VALUE }}</div>
+
+                                {% if item.PROPERTY_IT_LINK_VALUE %}
+                                <div>
+                                    <a class="more-link" href="{{ item.PROPERTY_IT_LINK_VALUE }}">
+                                        <span>Подробнее</span>
+                                        <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#4A66F5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="main-slider__title"><div class="headline headline_size-h1">{{ arParams.HEROTITLE }}</div></div>
+        </div>
+    </div>
+</section>

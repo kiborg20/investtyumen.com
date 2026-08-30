@@ -1,0 +1,47 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-white card_revert">
+            <div class="card__item card__item_between">
+                <div class="row">
+                    <div class="label"><p>Истории успеха</p></div>
+
+                    <div class="headline headline_size-h3">
+                        <p>
+                            Люди, которые изменили свою жизнь и жизнь региона
+                        </p>
+                    </div>
+
+                    <div class="description description_size-p1 description_padding-none">
+                        <p>Предприниматели, представители успешного бизнеса Тюменского региона, настоящие энтузиасты своего дела — создают наше будущее сегодня.</p>
+                    </div>
+                </div>
+
+                <div class="row"><a class="button button_size-m button_theme-blue" href="/about/success-stories/">Читать все истории</a></div>
+            </div>
+
+            <div class="card__item photo-slider">
+                <swiper-container class="photo-slider__swiper" init="false">
+                    {% for item in arResult %}
+                    <swiper-slide>
+                        <div class="image-container image-container_bg person-image"
+                             style="background-image: url('{{ get_src_by_id(item.PROPERTY_HOME_IMAGE_VALUE) }}');">
+                            <div class="photo-slider__content">
+
+                                <div class="badge badge_theme-light">{{ item.PROPERTY_IT_STOR_FIO_VALUE }}</div>
+                                <div class="badge badge_theme-light">{{ item.NAME }}</div>
+                                <div class="badge badge_theme-light">{{ item.PROPERTY_IT_STOR_DOL_VALUE }}</div>
+                                <a class="badge badge_theme-light" href="/about/success-stories{{ item.DETAIL_PAGE_URL }}">
+                                    Читать
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6685 5.60926L12.3924 7.33309H2.00187C1.97886 7.33309 1.95612 7.33429 1.93371 7.33656C1.59754 7.37069 1.33521 7.65462 1.33521 7.99976C1.33521 8.36796 1.63368 8.66642 2.00187 8.66642H12.3924L10.6685 10.3903C10.4082 10.6506 10.4082 11.0728 10.6685 11.3331C10.9289 11.5935 11.351 11.5935 11.6114 11.3331L14.4733 8.47116C14.7337 8.21082 14.7337 7.78869 14.4733 7.52836L11.6114 4.66646C11.351 4.4061 10.9289 4.4061 10.6685 4.66646C10.636 4.699 10.6075 4.73407 10.5831 4.77104C10.4123 5.0298 10.4407 5.38146 10.6685 5.60926Z" fill="#4A66F5"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    {% endfor %}
+                </swiper-container>
+            </div>
+        </div>
+    </div>
+</section>

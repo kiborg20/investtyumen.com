@@ -1,0 +1,119 @@
+.profile-block-hidden
+{
+	display: none;
+}
+
+.profile-block-shown
+{
+	display:block;
+}
+
+.profile-table
+{
+	width: 100%;
+}
+
+.profile-link
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+
+.profile-table td {
+	vertical-align: top;
+	width:50%;
+}
+
+div.bx-auth-profile input.bx-auth-input {vertical-align:middle;}
+div.bx-auth-profile span.bx-auth-secure {background-color:#FFFAE3; border:1px solid #DEDBC8; padding:2px; display:inline-block; vertical-align:middle;}
+div.bx-auth-profile div.bx-auth-secure-icon {background-image:url(images/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
+div.bx-auth-profile div.bx-auth-secure-unlock {background-image:url(images/sec-unlocked.png);}
+
+.form_fieldset {
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+label.formlabel.required_field {
+	position: relative;
+}
+label.formlabel {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.form_fieldset input[type=text], .form_fieldset input[type=number], textarea, .form_fieldset input[type=password]{
+	width: calc(100% - 50px);
+	height: 45px;
+	line-height: 45px;
+	border-radius: 10px;
+	padding: 0 25px;
+	border: 1px solid #9C9C9C;
+	/* margin-bottom: 30px; */
+}
+
+form#infoblock_form {
+	margin-top: 30px;
+	width: 50%;
+}
+
+.flex_full {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 50%;
+}
+
+@media (max-width: 1024px) {
+	.flex_full {
+		width: 100%;
+	}
+}
+
+.halfbox {
+	width: 48%;
+}
+
+.bx-input-file-desc{
+	display:none;
+}
+
+.form_fieldset select {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #9C9C9C;
+	border-radius: 10px;
+}
+
+.fileinputlabel{
+	border: 1px solid #4166FF;
+	color:#4166FF;
+	padding: 10px 20px;
+}
+
+.fileinputlabel:hover{
+	background:  #4166FF;
+	color:#fff;
+}
+
+input[name="PERSONAL_PHOTO"]{
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.avatarbox {
+	width: 200px;
+	height: auto;
+	margin-bottom:20px;
+}
+
+.avatarbox img {
+	width: 100%;
+	height: auto;
+}
+

@@ -1,0 +1,23 @@
+<section class="section section_padding-s">
+    <div class="wrapper wrapper_mode-l">
+        <h2 class="headline headline_size-h2">Другие истории успеха</h2>
+
+        <div class="other-stories person-cards">
+
+            {% for item in arResult['ITEMS'] %}
+                <a href="/about/success-stories/{{ item['CODE'] }}/" class="person-cards__item">
+                    <div class="person-cards__image"
+                         style="background-image: url({{ item['PREVIEW_PICTURE'] }})">
+
+                    </div>
+
+                    <div class="headline headline_size-h5">{{ item['IT_STOR_FIO']['PROPERTY_VALUE'] }}</div>
+
+                    <div class="description description_padding-top-xs description_c-black-60 description_size-p2 description_line-20">
+                        <p>{{ item['IT_STOR_DOL']['PROPERTY_VALUE'] }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

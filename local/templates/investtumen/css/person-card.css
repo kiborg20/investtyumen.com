@@ -1,0 +1,70 @@
+.person-cards {
+    display: flex;
+    margin: 0 calc(-1 * var(--padding-ml));
+    padding-top: var(--padding-xl);
+    flex-wrap: wrap;
+}
+
+.person-cards__item {
+    display: flex;
+    width: calc(100% / 4);
+    height: auto;
+    margin-bottom: var(--padding-xxl);
+    padding: 0 var(--padding-ml);
+    flex-direction: column;
+}
+
+.person-cards__image {
+    max-width: 321px;
+    height: 400px;
+    border-radius: var(--border-large);
+    margin-bottom: var(--padding-xxl);
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.person-cards__contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.person-cards__contacts-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-cards__contacts-text div:nth-child(1) {
+    margin-bottom: 8px;
+}
+
+.person-cards__contacts-text > div > a {
+    color: inherit;
+}
+
+.person-cards__contacts a.button {
+    display: none;
+    cursor: pointer;
+    padding-right: 6px;
+    padding-left: 8px;
+}
+
+@media (max-width: 1023px) {
+    .person-cards__item {
+        width: calc(100% / 2);
+        max-width: 348px;
+    }
+
+    .person-cards__contacts a.button {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .person-cards__item {
+        width: calc(100%);
+        max-width: 343px;
+    }
+}

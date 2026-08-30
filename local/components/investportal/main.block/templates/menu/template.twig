@@ -1,0 +1,32 @@
+<div class="page-menu">
+    {% for item in arResult['ITEMS'] %}
+        <div class="page-menu__item"><a data-scroll-to href="#{{item['CODE']}}">{{item['NAME']}}</a></div>
+    {% endfor %}
+</div>
+<section class="section">
+    <div class="wrapper wrapper_mode-l">
+        <div class="image-container image-container_bg full-image" style="background-image: url('{{ arResult['SECTION']['PICTURE'] }}')">
+            {% if arParams.FORM_SHOW is not empty and arParams.FORM_SHOW == 'Y' %}
+                <div class="image-container__form-wrapper">
+                    <div class="image-container__form-content">
+                        <div class="image-container__form-body">
+                            <div class="headline headline_size-h2">
+                                {{arParams.FORM_TITLE}}
+                            </div>
+                            {% if arParams.FORM_TEXT is not empty %}
+                                <div class="description description_padding-none description_line-20">
+                                    {{arParams.FORM_TEXT}}
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% if arParams.FORM_BUTTON_TEXT is not empty %}
+                            <div class="image-container__form-footer">
+                                <a data-open-modal="ask-question" class="button button_theme-blue button_size-m" href="#">{{arParams.FORM_BUTTON_TEXT}}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/templates/investtumen/css/contact-item.css");
+@import url("/local/templates/investtumen/css/person-card.css");
+
+.image-container_bg.full-image {
+    height: 392px;
+}
+
+.image-container_bg.part-image {
+    height: 576px;
+}
+
+@media (max-width: 1023px) {
+    .image-container_bg.full-image {
+        height: 320px;
+    }
+}
+
+.contact-item__info a {
+    color: inherit;
+}
+
+.card-mission .label {
+    margin-bottom: 60px;
+}
+
+.card-mission .label {
+    margin-bottom: 60px;
+}

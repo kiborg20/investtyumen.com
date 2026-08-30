@@ -1,0 +1,17 @@
+{# <pre>
+{{dump(arResult)}}
+</pre> #}
+{{ include_component("bitrix:news", "complex_foundation", {
+    'SEF_MODE': 'Y',
+    "IBLOCK_TYPE": "sferyrosta",
+    "IBLOCK_LIST": 'munitsipalitety',
+    'SEF_FOLDER': '/growth-area/munitsipalnoe-obrazovanie',
+    'SEF_URL_TEMPLATES': {'news': '/', 'section': '/#SECTION_ID#/', 'detail': '#ELEMENT_CODE#/'},
+    'USE_FILTER': 'Y',
+    'NEWS_COUNT': 9,
+    'DETAIL_TEMPLATE': 'munitsipalnoe-obrazovanie',
+    "FILTER_PROPERTY_CODE": ['type'],
+    'FILTERS': true,
+    'CURRENT_CODE': arResult['current']['code'],
+    'TEMPLATE': 'munitsipalitety.list',
+})}}

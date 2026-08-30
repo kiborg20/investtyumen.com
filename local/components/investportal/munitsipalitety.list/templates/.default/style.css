@@ -1,0 +1,31 @@
+.card-items.munitsipalitety-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 1023px) {
+    .card-items.munitsipalitety-items {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 575px) {
+    .card-items.munitsipalitety-items {
+        grid-template-columns: 1fr;
+    }
+}
+.munitsipalitety-items .card-items__item {
+    width: initial;
+    height: initial;
+    padding: 16px 15px;
+}
+.munitsipalitety-items .card-items__item .card-header {
+    justify-content: flex-start;
+    column-gap: 14px;
+    align-items: center;
+}
+.munitsipalitety-items .icon-block {
+    background: rgba(255, 255, 255, 1);
+}
+.munitsipalitety-items .more-link__icon {
+    margin-left: initial;
+}

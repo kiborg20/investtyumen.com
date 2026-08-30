@@ -1,0 +1,124 @@
+{% if arResult['IS_AJAX'] is empty%}
+<section class="section" id="list">
+    {% endif %}
+    <div class="wrapper wrapper_mode-l">
+        <div class="button-group">
+            <div data-filter-news-type="Все" class='button {{ arParams['FILTERS']['type'] is empty ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s' onClick='onFiltersNewsClick(this)'>Все</div>
+            <div data-filter-news-type="261" class='button {{ arParams['FILTERS']['type'] == '261' ? 'button_theme-blue' : 'button_theme-transparent' }}  button_size-s' onClick='onFiltersNewsClick(this)'>Новости</div>
+            <div data-filter-news-type="262" class='button {{ arParams['FILTERS']['type'] == '262' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s' onClick='onFiltersNewsClick(this)'>Инвестдайджесты</div>
+        </div>
+
+        <div class="cases press-center__cases">
+            {% for aItem in arResult['ITEMS'] %}
+                {% if aItem['href'] is not empty %}
+                    <div data-video-zoom class="cases__item">
+
+                        <div class="cases__image">
+                            <button data-video-zoom-button type="button"
+                                    class="video-content__button button button_size-m button_theme-light">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.00014 20.7268C6.66699 21.5026 5 20.5337 5 18.983V5.01698C5 3.46634 6.66699 2.4974 8.00013 3.27315L20.0007 10.2562C21.3331 11.0315 21.3331 12.9685 20.0007 13.7438L8.00014 20.7268Z"
+                                          fill="#4A66F5"/>
+                                </svg>
+                            </button>
+                            <img alt="{{ aItem['NAME'] }}" src="{{ get_src_by_id(aItem['PREVIEW_PICTURE']) }}"/>
+                        </div>
+
+                        <a href="/press-center/{{ aItem['CODE'] }}/" class="cases__content">
+                            <div class="row">
+                                <span class="news-item__date strong description_size-p2">{{ aItem['ACTIVE_FROM']|split(' ')|first }}</span>
+                                <span class="news-item__badge strong description_size-p2">Новость</span>
+                            </div>
+                            <div class="headline headline_size-h5">{{ aItem['NAME'] }}</div>
+                        </a>
+
+                        <div data-video-zoom-popup class="fixed-overlay popup__zoom-overlay modal-wrapper">
+                            <button data-video-zoom-close type="button" class="popup__zoom-close">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.35529 5.23359C6.04525 4.92217 5.54264 4.9221 5.23253 5.23359C4.92249 5.54499 4.92249 6.04991 5.23253 6.36132L10.8783 12.0321L5.29651 17.6387C4.98646 17.9501 4.98646 18.455 5.29651 18.7664C5.60655 19.0779 6.10923 19.0779 6.41927 18.7664L12.0011 13.1599L17.5829 18.7664C17.893 19.0778 18.3957 19.0778 18.7057 18.7664C19.0158 18.455 19.0157 17.9501 18.7057 17.6387L13.1239 12.0321L18.7697 6.36133C19.0797 6.04992 19.0797 5.545 18.7697 5.23359C18.4596 4.92217 17.957 4.92218 17.6469 5.23359L12.0011 10.9044L6.35529 5.23359Z"
+                                          fill="#252830"/>
+                                </svg>
+                            </button>
+
+                            <div class="popup__zoom">
+                                <div class="popup__zoom-container">
+
+                                    <iframe src="{{ aItem['href']['PROPERTY_VALUE'] }}"
+                                            frameborder="0"
+                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                {% else %}
+                    <div class="cases__item">
+                        <div class="cases__image">
+                            <img alt="{{ aItem['NAME'] }}" src="{{ get_src_by_id(aItem['PREVIEW_PICTURE']) }}"/>
+                        </div>
+                        <a href="/press-center/{{ aItem['CODE'] }}/" class="cases__content">
+                            <div class="row">
+                                <span class="news-item__date description_size-p2">{{ aItem['ACTIVE_FROM']|split(' ')|first }}</span>
+                                <span class="news-item__badge description_size-p2">Новость</span>
+                            </div>
+                            <div class="headline headline_size-h5">{{ aItem['NAME'] }}</div>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+    {% if arResult['IS_AJAX'] is empty%}
+</section>
+
+{# {% if arResult['PAGES']|length > 1 %}
+<section class="seaction section_padding-xl section_padding-top-none">
+    <div class="wrapper wrapper_mode-l">
+        <div class="pagination" id="pagination_news_list">
+            <div class="pagination__item" style="visibility:hidden">
+                <a class="pagination__button pagination__button_prev" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="M13.651 7.707a.25.25 0 1 0-.354-.354l-4.469 4.47a.25.25 0 0 0 0 .354l4.823-4.47Zm0 0-3.939 3.94-.354.353m4.293-4.293L9.358 12m0 0 .354.354M9.358 12l.354.354m0 0 3.94 3.939m-3.94-3.94 3.94 3.94m0 0a.25.25 0 0 1 0 .354v-.354Zm-.354.354-4.47-4.47 4.823 4.47a.25.25 0 0 1-.353 0Z"/></svg></a>
+            </div>
+
+            <div class="pagination__item" id="links">
+                {% for aItem in range(1, arResult['PAGES']) %}
+                    <a class="pagination__link {{ aItem == arResult['PAGE'] ? 'pagination__link_current' : '' }}" href="#">{{ aItem }}</a>
+                {% endfor %}
+            </div>
+
+            <div class="pagination__item">
+            <a class="pagination__button pagination__button_next" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="m14.656 12-.353.354-3.94 3.939a.25.25 0 0 0 0 .354M14.656 12l-3.586 5a.75.75 0 0 1-1.06 0l.353-.353M14.656 12l-.353-.353m.353.353-.353-.353m-3.94 5a.25.25 0 0 0 .354 0m-.354 0h.354m0 0 .353.353-.353-.354Zm0 0 4.47-4.47m-4.47 4.47 4.47-4.47m-.884-.53-3.94-3.94-.352.353.352-.353m3.94 3.94-3.94-3.94m5.177 3.763-.354.353-4.47-4.47a.25.25 0 0 0-.353 0m5.177 4.117-5.53-3.41a.75.75 0 0 1 0-1.06l.353.354m5.177 4.116-.354.353a.25.25 0 0 1 0 .354m.354-.707-.354.707m-4.823-4.823a.25.25 0 0 0 0 .353m0-.353v.353"/></svg></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endif %} #}
+
+{% if arResult['PAGES'] > 1 %}
+<section class="seaction section_padding-xl section_padding-top-none">
+    <div class="wrapper wrapper_mode-l">
+        <div class="pagination" id="pagination_news_list"
+             data-pages="{{ arResult['PAGES'] }}"
+             data-page="{{ arResult['PAGE'] }}"
+             data-limit="{{ arResult['LIMIT'] }}">
+            <div class="pagination__item" style="visibility:hidden">
+                <a class="pagination__button pagination__button_prev" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="M13.651 7.707a.25.25 0 1 0-.354-.354l-4.469 4.47a.25.25 0 0 0 0 .354l4.823-4.47Zm0 0-3.939 3.94-.354.353m4.293-4.293L9.358 12m0 0 .354.354M9.358 12l.354.354m0 0 3.94 3.939m-3.94-3.94 3.94 3.94m0 0a.25.25 0 0 1 0 .354v-.354Zm-.354.354-4.47-4.47 4.823 4.47a.25.25 0 0 1-.353 0Z"/></svg></a>
+            </div>
+
+            <div class="pagination__item" id="links"></div>
+
+            <div class="pagination__item">
+            <a class="pagination__button pagination__button_next" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#252830" stroke="#4A66F5" d="m14.656 12-.353.354-3.94 3.939a.25.25 0 0 0 0 .354M14.656 12l-3.586 5a.75.75 0 0 1-1.06 0l.353-.353M14.656 12l-.353-.353m.353.353-.353-.353m-3.94 5a.25.25 0 0 0 .354 0m-.354 0h.354m0 0 .353.353-.353-.354Zm0 0 4.47-4.47m-4.47 4.47 4.47-4.47m-.884-.53-3.94-3.94-.352.353.352-.353m3.94 3.94-3.94-3.94m5.177 3.763-.354.353-4.47-4.47a.25.25 0 0 0-.353 0m5.177 4.117-5.53-3.41a.75.75 0 0 1 0-1.06l.353.354m5.177 4.116-.354.353a.25.25 0 0 1 0 .354m.354-.707-.354.707m-4.823-4.823a.25.25 0 0 0 0 .353m0-.353v.353"/></svg></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endif %}

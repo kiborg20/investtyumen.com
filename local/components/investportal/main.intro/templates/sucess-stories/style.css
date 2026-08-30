@@ -1,0 +1,127 @@
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+@import url("/local/templates/investtumen/css/page-menu.css");
+@import url("/local/templates/investtumen/css/list.css");
+@import url("/local/components/investportal/newsonmain/templates/.default/style.css");
+
+.image-container_bg.full-image {
+  height: 582px;
+}
+
+.image-container_bg.image-mask::before {
+  display: none !important;
+}
+
+.image-mask__top,
+.image-mask__bottom {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 50%;
+}
+
+.image-mask__top {
+  top: 0;
+}
+
+.image-mask__bottom {
+  bottom: 0;
+}
+
+.image-mask__top::after,
+.image-mask__top::before,
+.image-mask__bottom::after,
+.image-mask__bottom::before {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  content: "";
+  background-image: var(--bg-mask);
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.image-mask__top::after,
+.image-mask__top::before {
+  top: 0;
+}
+
+.image-mask__bottom::after,
+.image-mask__bottom::before {
+  bottom: 0;
+}
+
+.image-mask__bottom::after,
+.image-mask__top::after {
+  left: 0;
+}
+
+.image-mask__top::before,
+.image-mask__bottom::before {
+  right: 0;
+}
+
+.image-mask__top::after {
+  border-radius: 40px 40px 0px 40px;
+  background-position: top left;
+}
+
+.image-mask__bottom::after {
+  border-radius: 40px 0px 40px 40px;
+  background-position: bottom left;
+}
+
+.image-mask__top::before {
+  border-radius: 40px 40px 40px 0px;
+  background-position: top right;
+}
+
+.image-mask__bottom::before {
+  border-radius: 0px 40px 40px 40px;
+  background-position: bottom right;
+}
+
+.card-advantage {
+  display: flex;
+  height: 480px;
+  padding: 20px;
+  flex-wrap: nowrap;
+  border-radius: var(--border-large);
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@media (max-width: 1023px) {
+  .image-mask__top::after,
+  .image-mask__top::before,
+  .image-mask__bottom::after,
+  .image-mask__bottom::before {
+    background-size: 200%;
+  }
+
+  .image-mask__top::before {
+    background-position: 100% 0%;
+  }
+
+  .image-mask__bottom::after {
+    background-position: 0% -312px;
+  }
+
+  .image-mask__bottom::before {
+    background-position: 100% -312px;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-container_bg.full-image {
+    height: 266px;
+  }
+
+  .card-advantage {
+    height: 144px;
+  }
+}

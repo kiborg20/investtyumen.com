@@ -1,0 +1,18 @@
+{% for item in arResult['ITEMS'] %}
+    <div class="news__item">
+        <div class="news__image"><a href="/press-center/{{ item['CODE'] }}/">
+                <img alt="" src="{{ item['PREVIEW_PICTURE'] }}"></a></div>
+        <div class="news__body">
+            <div class="news__date">
+                {# {{ item['DATE_CREATE'] }} #}
+                {{ item['ACTIVE_FROM']|split(' ')|first }}
+                <a href="/press-center/">Новость</a>
+            </div>
+            <div class="news__title">
+                <a href="/press-center/{{ item['CODE'] }}/">
+                    {{ item['NAME'] }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}

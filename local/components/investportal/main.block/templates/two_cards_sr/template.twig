@@ -1,0 +1,32 @@
+{% for item in arResult['ITEMS'] %}
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            <div class="card__item card__item_padding-none">
+
+                <div class="image-container image-container_bg full-image
+                            {{item['hasmask'] is not empty ? 'image-mask' : '' }}"
+                        style="{{item['hasmask'] is not empty ?
+                        "--bg-mask: url(" ~ get_src_by_id(item['PREVIEW_PICTURE']) ~ ");" : ''}}
+                                background-image: url({{ get_src_by_id(item['PREVIEW_PICTURE'])}})">
+                    <div class="image-mask__top"></div>
+                    <div class="image-mask__bottom"></div>
+                </div>
+            </div>
+
+            <div class="card__item card__item_column card__item_border">
+                <div class="headline headline_size-h2">{{ item['NAME'] }}</div>
+
+                <div class="description description_size-p1 description_padding-bottom-none description_c-blue">{{ item['PREVIEW_TEXT'] }}</div>
+
+                <div class="list-content">
+                    {% for list_item in item['list_content'] %}
+                        <div class="list-content__item">{{list_item['PROPERTY_VALUE']}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endfor %}

@@ -1,0 +1,71 @@
+@import url("/local/templates/investtumen/css/person-card.css");
+@import url("/local/templates/investtumen/css/breadscrumbs.css");
+
+.image-container_bg.full-image {
+  height: 498px;
+}
+
+.image-container_bg.main-picture {
+  background-position: top;
+}
+
+.bottom-blockquote {
+  display: flex;
+  margin-top: var(--padding-xl);
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tophistory_photo {
+  margin: 40px 0;
+}
+
+.other-stories::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+  height: 4px;
+}
+
+.other-stories::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.other-stories::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: transparent;
+  border-right: none;
+  border-left: none;
+}
+
+.other-stories::-webkit-scrollbar-button:vertical:start:increment,
+.other-stories::-webkit-scrollbar-button:vertical:end:decrement,
+.other-stories::-webkit-scrollbar-button:horizontal:start:increment,
+.other-stories::-webkit-scrollbar-button:horizontal:end:decrement {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .card.card-blockquote {
+    padding: 32px;
+  }
+
+  .image-container_bg.full-image {
+    height: 400px;
+  }
+
+  .other-stories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .other-stories .person-cards__item {
+    width: 320px;
+    min-width: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-container_bg.full-image {
+    height: 153px;
+  }
+}

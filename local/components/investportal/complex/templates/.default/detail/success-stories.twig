@@ -1,0 +1,12 @@
+{{ include_component("investportal:main.block", "detailtopstory", {
+    'IBLOCK':  arResult['ITEM']['IBLOCK_CODE'],
+    'IBLOCK_TYPE': arParams['IBLOCK_TYPE'],
+    'ELEMENT_CODE': arResult['ITEM']['CODE']
+}) }}
+
+{{ include_component("investportal:sr.random_section", "randomstories", {
+    'IBLOCK':  arResult['ITEM']['IBLOCK_CODE'],
+    'IBLOCK_TYPE': arParams['IBLOCK_TYPE'],
+    'ELEMENT_CODE': arResult['ITEM']['CODE'],
+    'ELEMENT_COUNT': 4
+}) }}

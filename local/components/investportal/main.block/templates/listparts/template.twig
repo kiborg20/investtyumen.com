@@ -1,0 +1,27 @@
+<section class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <h2 class="headline headline_size-h2">Международное сотрудничество</h2>
+        <div class="filter-panel button-group">
+            <div data-filter-country="234" class="button {{ (arParams['FILTERS']['partworld'] == '234' or arParams['FILTERS']['partworld'] is empty) ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersCountryClick(this)'>Азия</div>
+            <div data-filter-country="235" class="button {{ arParams['FILTERS']['partworld'] == '235' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersCountryClick(this)'>Европа</div>
+            <div data-filter-country="236" class="button {{ arParams['FILTERS']['partworld'] == '236' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersCountryClick(this)'>Америка</div>
+            <div data-filter-country="237" class="button {{ arParams['FILTERS']['partworld'] == '237' ? 'button_theme-blue' : 'button_theme-transparent' }} button_size-s" onClick='onFiltersCountryClick(this)'>СНГ</div>
+        </div>
+
+        <div class="international_cards link-cards">
+
+            {% for item in arResult['ITEMS'] %}
+            <div class="link-cards__item">
+                <a href="{{(item['CODE'] ~ "/")}}" class="link-cards__link">
+                    <p class="description strong description_size-p1 description_padding-none">
+                        {{ item['NAME'] }}
+                    </p>
+                    {{ item['icon']['PROPERTY_VALUE'] | raw }}
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,79 @@
+{% for item in arResult['ITEMS'] %}
+<section id="goals" class="section section_padding-xl">
+    <div class="wrapper wrapper_mode-l">
+        <div class="card card_theme-transparent">
+            {% if item['PROP']['layout'] %}
+                <div class="card__item card__item_between card__item_border">
+                    <div class="label">{{ item['PROP']['header_2'] }}</div>
+
+                    {% if item['PROP']['b2_list'] %}
+                        <div class="list-content">
+                            {% for el in item['PROP']['b2_list'] %}
+                                <div class="list-content__item"> {{ el }} </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="card__item card__item_between card__item_border">
+                    <div class="headline headline_size-h2">{{ item['NAME'] }}</div>
+
+                    <div class="card card_theme-transparent">
+                        <div class="card__item card__item_column">
+                            {% if item['PROP']['b1_left_interest'] %}
+                                <div class="headline headline_size-h2 headline_padding-none headline_color-blue">{{ item['PROP']['b1_left_interest'] }}</div>
+                            {% endif %}
+                            {% if item['PROP']['b1_left_text'] %}
+                                <div class="description description_size-p2 description_padding-none description_line-20">{{ item['PROP']['b1_left_text'] | raw }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="card__item card__item_column">
+                            <div class="headline headline_size-h2 headline_padding-none headline_color-blue">{{ item['PROP']['b1_right_interest'] }}</div>
+
+                            <div class="description description_size-p2 description_padding-none description_line-20">{{ item['PROP']['b1_right_text'] }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="card__item card__item_between card__item_border">
+                    <div class="headline headline_size-h2">{{ item['NAME'] }}</div>
+
+                    <div class="card card_theme-transparent">
+                        <div class="card__item card__item_column">
+                            {% if item['PROP']['b1_left_interest'] %}
+                            <div class="headline headline_size-h2 headline_padding-none headline_color-blue">{{ item['PROP']['b1_left_interest'] }}</div>
+                            {% endif %}
+                            {% if item['PROP']['b1_left_text'] %}
+                            <div class="description description_size-p2 description_padding-none description_line-20">{{ item['PROP']['b1_left_text'] | raw }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="card__item card__item_column">
+                            <div class="headline headline_size-h2 headline_padding-none headline_color-blue">{{ item['PROP']['b1_right_interest'] }}</div>
+
+                            <div class="description description_size-p2 description_padding-none description_line-20">{{ item['PROP']['b1_right_text'] }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__item card__item_between card__item_border">
+                    <div class="label">{{ item['PROP']['header_2'] }}</div>
+
+                    {% if item['PROP']['b2_list'] %}
+                    <div class="list-content">
+                        {% if item['PREVIEW_TEXT'] %}
+                            {{ item['PREVIEW_TEXT'] | raw }}
+                        {% else %}
+                            {% for el in item['PROP']['b2_list'] %}
+                                <div class="list-content__item"> {{ el }} </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endfor %}

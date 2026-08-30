@@ -1,0 +1,30 @@
+.phone-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 666px;
+    width: 100%;
+}
+
+.phone-cards__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 24px;
+}
+
+.phone-cards__item .headline {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 767px) {
+    .phone-cards {
+        flex-direction: column;
+    }
+
+    .phone-cards__item {
+        margin-bottom: 16px;
+    }
+}

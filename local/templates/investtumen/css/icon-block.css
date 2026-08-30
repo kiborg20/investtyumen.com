@@ -1,0 +1,42 @@
+.icon-block {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--border-medium);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: var(--bg-radial-svg) no-repeat center;
+  color: var(--color-white);
+  font-size: calc(var(--font-size-p1)*1.2px);
+  font-weight: 500;
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+.icon-block_theme-white {
+  background: var(--background-white);
+}
+
+.icon-block_theme-transparent {
+  background: none;
+}
+
+.icon-block_theme-blue {
+  background: var(--color-blue);
+}
+
+.icon-block_size-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-block_size-s {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-block_size-m {
+  width: 40px;
+  height: 40px;
+}

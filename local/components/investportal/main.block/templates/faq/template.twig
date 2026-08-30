@@ -1,0 +1,23 @@
+<section class="section section_padding-m">
+    <div class="wrapper wrapper_mode-s">
+
+        {% for sType, aItems in arResult['TYPES'] %}
+        <p class="question-theme__title">{{ sType }}</p>
+
+        <div class="question-theme__content">
+            {% for item in aItems %}
+            <div data-question-item class="question-item">
+                <div class="question-item__title">
+                    <div>{{ item['NAME'] }}</div>
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L6 6L1 0.999998" stroke="#4A66F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="question-item__answer">{{ item['PREVIEW_TEXT'] | raw}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>

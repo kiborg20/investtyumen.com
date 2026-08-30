@@ -1,0 +1,66 @@
+.got-question {
+  padding: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  .button {
+    width: fit-content;
+  }
+}
+
+.got-question__left, .got-question__right {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - calc(var(--padding-ml) * 2));
+  margin: 0 var(--padding-ml);
+  flex: 1 0 calc(50% - calc(var(--padding-ml) * 2));
+}
+
+.got-question .contact-item {
+  .contact-item__image, .contact-item__info > div, .contact-item__info {
+    margin-bottom: 16px;
+  }
+}
+
+.got-question-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.got-question-buttons .button {
+  margin-right: var(--padding-xl);
+}
+
+@media (max-width: 1023px) {
+  .got-question-buttons {
+    flex-direction: column;
+  }
+
+  .got-question-buttons .button {
+    margin-right: 0;
+    margin-bottom: var(--padding-xl);
+  }
+}
+
+@media (max-width: 767px) {
+  .got-question {
+    flex-direction: column;
+
+    & .button {
+      width: 100%;
+    }
+  }
+
+  .got-question__left, .got-question__right {
+    width: 100%;
+    margin: 0;
+    flex: 1 0 100%;
+  }
+
+  .got-question__left {
+    margin-bottom: 32px;
+  }
+}

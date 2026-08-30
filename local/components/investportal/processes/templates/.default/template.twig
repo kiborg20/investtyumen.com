@@ -1,0 +1,12 @@
+<h1>{{ arResult['HEADER']['DETAIL_TEXT'] }}</h1>
+
+<div>
+    {% set i = 1 %}
+    {% for item in arResult['ITEMS'] %}
+        <div>
+            <div>{{ i }}</div>
+            {{ item['PREVIEW_TEXT'] }}
+        </div>
+        {% set i = i + 1 %}
+    {% endfor %}
+</div>

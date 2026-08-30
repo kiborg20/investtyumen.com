@@ -1,0 +1,84 @@
+.field-wrapper .qs-datepicker-container {
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    width: 256px;
+    top: 80px !important;
+}
+
+.field-wrapper .qs-controls {
+    background: transparent;
+    color: var(--color-basic);
+}
+
+.field-wrapper .qs-controls .qs-month-year {
+    font-weight: 500;
+    font-size: calc(var(--font-size-p1)*1px);
+    border-bottom: none;
+}
+
+.field-wrapper .qs-controls .qs-month-year:hover {
+    border-bottom: none;
+}
+
+.field-wrapper .qs-controls {
+    padding: 8px 0;
+}
+
+.field-wrapper .qs-squares {
+    padding: 0;
+    color: var(--color-basic);
+}
+
+.field-wrapper .qs-square {
+    padding: 2px;
+    width: 32px;
+    height: 32px;
+    font-weight: 500;
+    font-size: calc(var(--font-size-p2)*1px);
+}
+
+.field-wrapper .qs-square.qs-day {
+    line-height: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-black-60);
+}
+
+.field-wrapper .qs-square.qs-active, 
+.field-wrapper .qs-square.qs-current.qs-active {
+    background: var(--color-blue);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.field-wrapper .qs-square.qs-current {
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+.field-wrapper .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+    background: var(--color-black-20);
+}
+
+.field-wrapper .qs-square.qs-outside-current-month, .field-wrapper .qs-square.qs-disabled {
+    opacity: 1;
+    color: var(--color-black-40);
+}
+
+.field-wrapper .qs-datepicker-container .buttons-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.field-wrapper .qs-datepicker-container .buttons-panel button {
+    cursor: pointer;
+    width: 50%;
+    justify-content: center;
+}
+
+.field-wrapper .qs-datepicker-container .buttons-panel button:first-child {
+    margin-right: 8px;
+}

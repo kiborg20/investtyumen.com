@@ -1,0 +1,28 @@
+.badge {
+  padding: var(--padding-small) var(--padding-ml);
+  border-radius: var(--border-medium);
+  font-size: calc(var(--font-size-p2) * 1px);
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.badge_theme-light {
+  display: inline-flex;
+  background: var(--background-white);
+}
+
+.badge_theme-blue {
+  display: inline-flex;
+  background: var(--background-blue-light);
+}
+
+.badge_theme-blue-dark {
+  display: inline-flex;
+  background: var(--background-blue);
+}
+
+.badge_theme-dark {
+  display: inline-flex;
+  background: var(--background-black);
+  color: var(--color-white);
+}

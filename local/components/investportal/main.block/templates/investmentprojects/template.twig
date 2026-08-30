@@ -1,0 +1,87 @@
+<section class="section section_padding-m">
+    <div class="wrapper wrapper_mode-l">
+        <div class="project-filters__panel">
+            <div class="button-group">
+                <a data-tab="1" class="button button_theme-blue button_size-s" href="#">Реализованные</a>
+
+                <a data-tab="2" class="button button_theme-transparent button_size-s" href="#">В процессе</a>
+
+                <a data-tab="3" class="button button_theme-transparent button_size-s" href="#">Будущие</a>
+
+                <a data-tab="4" class="button button_theme-transparent button_size-s" href="#">Готовые к инвестированию</a>
+            </div>
+            <div data-form-select="GET:BRANCH" class="form-field__select show">
+                    <input id="branch" type="text" placeholder="Выберите отрасль" readonly/>
+                    <ul class="options">
+                        <li class="option-none">Все отрасли</li>
+                        <li>Нефтесервисное оборудование и услуги</li>
+                        <li>Нефтехимия и переработка полимеров</li>
+                        <li>Биотехнологии</li>
+                        <li>Лесопромышленный комплекс</li>
+                        <li>Туризм</li>
+                        <li>Добыча нефти</li>
+                        <li>Муниципальное образование</li>
+                        <li>Креативные индустрии</li>
+                        <li>Строительство</li>
+                    </ul>
+            </div>
+        </div>
+
+        <div class="cases project-cases">
+            {{ include_component("investportal:prtab", ".default", {
+                "COMPONENT_TEMPLATE": ".default",
+                "IBLOCK_ID": "15",
+                "IBLOCK_TYPE": "content",
+                "PROPERTY_CODE": "",
+                "SECTION_ID": "1",
+                "BRANCH": arParams['FILTERS']['BRANCH']
+            }) }}
+
+
+            {{ include_component("investportal:prtab", ".default", {
+                "COMPONENT_TEMPLATE": ".default",
+                "HEROTITLE": "Заголовок",
+                "IBLOCK_ID": "15",
+                "IBLOCK_TYPE": "content",
+                "PROPERTY_CODE": "",
+                "SECTION_ID": "2",
+                "BRANCH": arParams['FILTERS']['BRANCH']
+            }) }}
+
+            {{ include_component("investportal:prtab", "", {
+                "HEROTITLE": "Заголовок",
+                "IBLOCK_ID": "15",
+                "IBLOCK_TYPE": "content",
+                "PROPERTY_CODE": "",
+                "SECTION_ID": "4",
+                "BRANCH": arParams['FILTERS']['BRANCH']
+            }) }}
+        </div>
+
+        <div class="card card_hidden card_theme-white" data-category="3">
+            <div class="card__item card__item_between">
+                <div class="row">
+                    <div class="label"><p>Начни инвестировать</p></div>
+
+                    <div class="headline headline_size-h3"><p>Стань частью Тюменской области</p></div>
+
+                    <div class="description description_size-p1">
+                        <p>Для привлечения потенциальных инвесторов сформирован перечень объектов общественной инфраструктуры, создание (реконструкция) которых планируется с применением механизмов государственно-частного партнёрства, в том числе концессионных соглашений. Данный перечень ежегодно утверждается на заседании Совета по развитию ГЧП в Тюменской области.</p>
+                        <p>Ознакомьтесь с перечнем ГЧП-проектов, реализуемых в Тюменской области.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <a download class="button button_theme-blue" href="//investintyumen.ru/investGCHP_2023%20(2).pdf">
+                        <span class="button__icon button__icon_left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#fff" d="M12.75 13.19 15.94 10A.75.75 0 1 1 17 11.06l-4.47 4.47a.75.75 0 0 1-1.06 0L7 11.06A.75.75 0 1 1 8.06 10l3.19 3.19V2.75a.75.75 0 1 1 1.5 0v10.44Z"/><path fill="#fff" d="M4.75 14.75a.75.75 0 1 0-1.5 0V19c0 .967.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-4.25a.75.75 0 1 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25v-4.25Z"/></svg></span>
+                        <span>Скачать перечень</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card__item">
+                <div class="image-container image-container_bg person-image" style="background-image: url('/statics/photo.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</section>

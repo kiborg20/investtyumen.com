@@ -1,0 +1,53 @@
+<div class="cases cases_main" data-category="{{ arResult.0.IBLOCK_SECTION_ID }}">
+    {% for item in arResult %}
+    <div class="cases__item">
+        <div
+            class="cases__image"
+            {% if item.PREVIEW_PICTURE.src %} style="background-image: url({{ item.PREVIEW_PICTURE.src }})"{% endif %}
+        >
+            {% if item.PROPERTY_IT_IP_LOC_VALUE %}
+                <div class="badge badge_theme-light">{{ item.PROPERTY_IT_IP_LOC_VALUE }}</div>
+            {% endif %}
+
+            <div class="badge badge_theme-blue-dark badge_industry">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 22C21.1046 22 22 21.1046 22 20V19.7714C22 19.275 21.8154 18.7963 21.482 18.4284L16.268 11.5716C15.9346 11.2037 15.75 10.725 15.75 10.2286L15.75 3.5H16.7502C17.1644 3.5 17.5002 3.16421 17.5002 2.75C17.5002 2.33579 17.1644 2 16.7502 2L7.27971 2C6.8655 2 6.52971 2.33579 6.52971 2.75C6.52971 3.16421 6.8655 3.5 7.27971 3.5L8.25121 3.5C8.25041 3.52263 8.25 3.54562 8.25 3.569V10.2286C8.25 10.725 8.0654 11.2037 7.732 11.5716L2.518 18.4284C2.1846 18.7963 2 19.275 2 19.7714V20C2 21.1046 2.8954 22 4 22L20 22ZM9.75 3.5V4.4009V10.2286C9.75 11.0974 9.4269 11.9351 8.8435 12.5789L3.6295 19.4357C3.5462 19.5276 3.5 19.6473 3.5 19.7714V20C3.5 20.2761 3.7239 20.5 4 20.5L20 20.5C20.2761 20.5 20.5 20.2761 20.5 20V19.7714C20.5 19.6473 20.4538 19.5276 20.3705 19.4357L15.1565 12.5789C14.5731 11.9351 14.25 11.0974 14.25 10.2286L14.25 3.5H9.75Z" fill="white"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="cases__content">
+            <div class="cases__text">
+                <div class="headline headline_size-h5">{{ item.NAME }}</div>
+                {% if item.PREVIEW_TEXT %}
+                <div class="description description_size-p1 description_padding-s"><p>{{ item.PREVIEW_TEXT }}</p></div>
+                {% endif %}
+            </div>
+
+            {% if item.PROPERTY_IT_IP_VOL_VALUE or item.PROPERTY_IT_IP_EQ_VALUE %}
+                <div class="cases__list">
+                    <div class="list">
+                        {% if item.PROPERTY_IT_IP_VOL_VALUE %}
+                            <div class="list__item">
+                                <div class="description description_padding-none description_size-p2">Объём инвестиций (млн ₽)</div>
+
+                                <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_VOL_VALUE }}</div>
+                            </div>
+                        {% endif %}
+
+                        {% if item.PROPERTY_IT_IP_EQ_VALUE %}
+                            <div class="list__item">
+                                <div class="description description_padding-none description_size-p2">Количество
+                                    рабочих мест
+                                </div>
+
+                                <div class="description description_padding-none description_size-p2">{{ item.PROPERTY_IT_IP_EQ_VALUE }}</div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
