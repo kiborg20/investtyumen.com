@@ -1,6 +1,7 @@
+{% set sliderTemplate = (is_admin() or request_get('slider') == 'sidebar') ? 'with_sidebar' : '.default' %}
 {{ include_component(
     "investportal:mainSlider",
-    ".default",
+    sliderTemplate,
     {
         "COMPONENT_TEMPLATE": "homepage",
         "HEROTITLE": "Тюменская область&nbsp;&mdash; территория комфорта для жизни и&nbsp;бизнеса",

@@ -1,0 +1,129 @@
+<section class="section section_padding-m section_padding-top-none hero-with-sidebar">
+    <div class="wrapper wrapper_mode-l">
+        <div class="hero-with-sidebar__grid">
+            <div class="hero-with-sidebar__main">
+                <div class="main-slider_sidebar-layout">
+                    <div class="main-slider__stage">
+                        <div class="main-slider">
+                            <div class="swiper-wrapper">
+                                {% for item in arResult.ITEMS %}
+                                    <div class="swiper-slide main-slider__item">
+                                        <div class="main-slider__wrapper">
+                                            <div class="main-slider__image" style="background-image: url({{ item.PREVIEW_PICTURE.src }})"></div>
+                                        </div>
+
+                                        <div class="main-slider__card">
+                                            <div class="main-slider__card-body">
+                                                <div class="headline headline_size-h3 headline_between">
+                                                    <span>{{ item.NAME }}</span>
+                                                    {% if item.PROPERTY_IT_ICON_VALUE %}
+                                                    <span class="icon-block">
+                                                        <img alt="{{ item.NAME }}" src="{{ item.PROPERTY_IT_ICON_VALUE }}">
+                                                    </span>
+                                                    {% endif %}
+                                                </div>
+
+                                                <div class="description description_size-p2 description_padding-top-s">
+                                                    <p>
+                                                        {{ item.PROPERTY_IT_NOMINATION_VALUE }}<br>{{ item.PROPERTY_IT_RAIT_VALUE }}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="main-slider__card-footer">
+                                                <div class="description description_size-p3 description_padding-none"><strong>{{ item.PROPERTY_IT_YEAR_VALUE }}</strong></div>
+
+                                                {% if item.PROPERTY_IT_LINK_VALUE %}
+                                                <div>
+                                                    <a class="more-link" href="{{ item.PROPERTY_IT_LINK_VALUE }}">
+                                                        <span>Подробнее</span>
+                                                        <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#4A66F5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                                                    </a>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+
+                                            {% if item.PROPERTY_IT_LINKS_VALUE %}
+                                                <div class="main-slider__card-btns">
+                                                    {% for btnLink in item.PROPERTY_IT_LINKS_VALUE %}
+                                                        <a class="button button_theme-blue button_size-s" href="{{ btnLink.DESCRIPTION|trim }}">
+                                                            {{ btnLink.VALUE }}
+                                                        </a>
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-slider__title">
+                        <div class="headline headline_size-h1 headline_padding-none">{{ arParams.HEROTITLE }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-with-sidebar__aside">
+                <div class="hero-sidebar">
+                    <div class="card-items card-items_nowrap hero-sidebar__banner-wrap">
+                        <a href="#" class="card-items__item card-items__item_hovered hero-sidebar__banner">
+                            <div class="card-header">
+                                <div class="label"><p>Мероприятие</p></div>
+
+                                <div class="more-link">
+                                    <span>Подробнее</span>
+                                    <span class="more-link__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.143 3H13m0 0v7.857M13 3 3 13"/></svg></span>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="headline headline_size-h5"><p>День инвестора 2026</p></div>
+                                <div class="description description_size-p3 description_padding-top-xs"><p>12 сентября · Тюмень</p></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="news-wrapper hero-sidebar__news">
+                        <div class="news-wrapper__header">
+                            <div class="headline headline_size-h3 headline_padding-none">ТОП-5 для инвестора</div>
+                        </div>
+
+                        <div class="news hero-sidebar__news-list">
+                            <a class="news__item" href="#">
+                                <div class="news__image">
+                                    <img alt="" src="/statics/slider-image.jpg">
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__date">28 августа 2026</div>
+                                    <div class="news__title">Инвестиционный форум Тюменской области: итоги и перспективы</div>
+                                </div>
+                            </a>
+
+                            <a class="news__item" href="#">
+                                <div class="news__image">
+                                    <img alt="" src="/statics/slider-image.jpg">
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__date">15 августа 2026</div>
+                                    <div class="news__title">Новые меры поддержки для резидентов особых экономических зон</div>
+                                </div>
+                            </a>
+
+                            <a class="news__item" href="#">
+                                <div class="news__image">
+                                    <img alt="" src="/statics/slider-image.jpg">
+                                </div>
+                                <div class="news__body">
+                                    <div class="news__date">5 августа 2026</div>
+                                    <div class="news__title">Тюменская область вошла в топ-5 регионов по инвестиционной привлекательности</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

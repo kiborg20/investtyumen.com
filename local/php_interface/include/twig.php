@@ -57,4 +57,16 @@ function registerTwigFunctions(\Twig\Environment $twig)
         return CFile::GetPath($fileId);
     });
     $twig->addFunction($getSrcById);
+
+    $isAdmin = new \Twig\TwigFunction('is_admin', function() {
+        global $USER;
+
+        return is_object($USER) && $USER->IsAdmin();
+    });
+    $twig->addFunction($isAdmin);
+
+    $requestGet = new \Twig\TwigFunction('request_get', function($key, $default = null) {
+        return $_GET[$key] ?? $default;
+    });
+    $twig->addFunction($requestGet);
 }
