@@ -39,5 +39,15 @@ while ($arFields = $res->GetNext())
     $arResult['ITEMS'][] = $arFields;
 }
 
+$arResult['ACTION_LINKS'] = [];
+if (!empty($arResult['ITEMS'])) {
+    foreach ($arResult['ITEMS'] as $item) {
+        if (!empty($item['PROPERTY_IT_LINKS_VALUE'])) {
+            $arResult['ACTION_LINKS'] = $item['PROPERTY_IT_LINKS_VALUE'];
+            break;
+        }
+    }
+}
+
 $this->includeComponentTemplate();
 ?>

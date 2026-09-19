@@ -1,4 +1,5 @@
 .main-slider {
+  position: relative;
   height: 615px;
 }
 
@@ -76,7 +77,7 @@
 .main-slider__card {
   position: absolute;
   top: 265px;
-  right: 115px;
+  right: 48px;
   display: flex;
   width: 436px;
   height: 350px;
@@ -84,7 +85,15 @@
   background: var(--background-white);
   border-radius: var(--border-large);
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+}
+
+.main-slider__item_current .main-slider__card {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .main-slider__card-footer {
@@ -93,8 +102,43 @@
   align-items: center;
 }
 
+.swiper-fade .swiper-slide.main-slider__item.main-slider__item_current {
+  pointer-events: auto;
+}
+
+.main-slider__actions {
+  position: absolute;
+  left: 16px;
+  top: 420px;
+  z-index: 5;
+  max-width: calc(100% - 480px);
+  padding: 16px;
+  background: var(--background-white);
+  border-radius: var(--border-large);
+  pointer-events: auto;
+  transform: translateY(calc(-100% - 16px));
+}
+
+.main-slider__actions-title {
+  margin: 0 0 12px;
+}
+
+.main-slider__card-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.main-slider__card-btns .button {
+  pointer-events: auto;
+}
+
 @media (max-width: 1023px) {
   .main-slider {
+    height: 484px;
+  }
+
+  .main-slider .swiper-wrapper {
     height: 484px;
   }
 
@@ -103,7 +147,7 @@
   }
 
   .main-slider__card-body .headline {
-    font-size: calc(var(--font-size-h3)*1px);
+    font-size: calc(var(--font-size-h3) * 1px);
     line-height: 40px;
   }
 
@@ -124,13 +168,26 @@
     max-width: 65%;
     left: unset;
   }
+
+  .main-slider__actions {
+    left: 12px;
+    top: 320px;
+    max-width: calc(100% - 340px);
+    padding: 12px;
+    transform: translateY(calc(-100% - 12px));
+  }
 }
 
 @media (max-width: 767px) {
   .main-slider {
     display: flex;
-    height: 544px;
+    height: auto;
     flex-direction: column;
+  }
+
+  .main-slider .swiper-wrapper {
+    height: 400px;
+    overflow: hidden;
   }
 
   .main-slider .main-slider__title {
@@ -138,17 +195,52 @@
     bottom: auto;
     left: auto;
     max-width: none;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     order: -1;
   }
 
   .main-slider .main-slider__title .headline {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 34px;
   }
 
   .main-slider__wrapper {
-    height: 200px;
+    height: 220px;
+  }
+
+  .main-slider__actions {
+    position: static;
+    top: auto;
+    left: auto;
+    max-width: none;
+    width: 100%;
+    margin-top: 12px;
+    padding: 16px 20px;
+    transform: none;
+    order: 2;
+    box-sizing: border-box;
+  }
+
+  .main-slider__actions-title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .main-slider__card-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .main-slider__card-btns .button {
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
   }
 
   .main-slider__card {
@@ -156,14 +248,16 @@
     top: auto;
     right: auto;
     width: 100%;
-    height: 200px;
+    height: auto;
+    min-height: 160px;
+    padding: 20px;
   }
 
   .main-slider__card-body .headline {
-    max-height: 32px;
-    font-size: 28px;
-    line-height: 32px;
-    overflow: hidden;
+    max-height: none;
+    font-size: 24px;
+    line-height: 28px;
+    overflow: visible;
   }
 
   .main-slider__card-body .headline .icon-block {
@@ -171,27 +265,11 @@
     height: 32px;
   }
 
+  .main-slider__card-body .description {
+    margin-bottom: 12px;
+  }
+
   .headline_size-h1 + .description_size-p1 {
     margin: 8px 0 0 !important;
   }
-}
-.fsdf {
-  align-items: center;
-}
-
-.swiper-fade .swiper-slide.main-slider__item.main-slider__item_current {
-  pointer-events: auto;
-}
-
-.main-slider__card-btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-  position: relative;
-  z-index: 2;
-}
-
-.main-slider__card-btns .button {
-  pointer-events: auto;
 }

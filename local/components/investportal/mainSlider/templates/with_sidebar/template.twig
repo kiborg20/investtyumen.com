@@ -42,21 +42,24 @@
                                                 </div>
                                                 {% endif %}
                                             </div>
-
-                                            {% if item.PROPERTY_IT_LINKS_VALUE %}
-                                                <div class="main-slider__card-btns">
-                                                    {% for btnLink in item.PROPERTY_IT_LINKS_VALUE %}
-                                                        <a class="button button_theme-blue button_size-s" href="{{ btnLink.DESCRIPTION|trim }}">
-                                                            {{ btnLink.VALUE }}
-                                                        </a>
-                                                    {% endfor %}
-                                                </div>
-                                            {% endif %}
                                         </div>
                                     </div>
                                 {% endfor %}
                             </div>
                         </div>
+
+                        {% if arResult.ACTION_LINKS %}
+                            <div class="main-slider__actions">
+                                <div class="headline headline_size-h5 headline_padding-none main-slider__actions-title">Начните инвестиционный проект</div>
+                                <div class="main-slider__card-btns">
+                                    {% for btnLink in arResult.ACTION_LINKS %}
+                                        <a class="button button_theme-blue button_size-s" href="{{ btnLink.DESCRIPTION|trim }}" target="_blank" rel="noopener noreferrer">
+                                            {{ btnLink.VALUE }}
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
 
                     <div class="main-slider__title">
