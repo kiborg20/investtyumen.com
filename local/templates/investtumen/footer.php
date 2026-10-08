@@ -826,6 +826,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                                 <li><a href="/regional-standard/invest-declaration/">Инвестиционная декларация</a></li>
                                 <li><a href="/regional-standard/invest-comitet/">Инвестиционный комитет</a></li>
                                 <li><a href="/regional-standard/invest-rules/">Свод инвестиционных правил</a></li>
+                                <li><a href="/regional-standard/tsentr-obrashcheniy-dlya-biznesa/">Центр обращений для бизнеса</a></li>
                             </ul>
                         </li>
 
