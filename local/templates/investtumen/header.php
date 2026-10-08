@@ -305,6 +305,8 @@ use Bitrix\Main\Page\Asset;
                                                 <p><a href="/regional-standard/invest-comitet/">Инвестиционный комитет</a></p>
 
                                                 <p><a href="/regional-standard/invest-rules/">Свод инвестиционных правил</a></p>
+
+                                                <p><a href="/regional-standard/tsentr-obrashcheniy-dlya-biznesa/">Центр обращений для бизнеса</a></p>
                                             </div>
                                         </div>
                                     </div>

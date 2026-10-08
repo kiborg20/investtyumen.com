@@ -438,6 +438,11 @@
                                     </a>
                                 </p>
                                 <p>
+                                    <a class="submenu__link" href="/regional-standard/tsentr-obrashcheniy-dlya-biznesa/">
+                                        Центр обращений для бизнеса
+                                    </a>
+                                </p>
+                                <p>
                                     <a class="submenu__link" href="/regional-standard/invest-map/">
                                         Инвестиционная карта
                                     </a>
